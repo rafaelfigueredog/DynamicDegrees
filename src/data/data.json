@@ -12,7 +12,7 @@
                     "unlock": [
                         {
                             "period": 1, 
-                            "course": 0
+                            "id": 0
                         }
                     ],
                     "prerequisite": []
@@ -41,11 +41,19 @@
                     "unlock": [
                         {
                             "period": 1,
-                            "course": 3
+                            "id": 3
                         },
                         {
                             "period": 1,
-                            "course": 4
+                            "id": 4
+                        }, 
+                        {
+                            "period": 2,
+                            "id": 3
+                        },
+                        {
+                            "period": 2,
+                            "id": 4
                         }
                     ],
                     "prerequisite": []
@@ -58,11 +66,19 @@
                     "unlock": [
                         {
                             "period": 1,
-                            "course": 3
+                            "id": 3
                         },
                         {
                             "period": 1,
-                            "course": 4
+                            "id": 4
+                        },
+                        {
+                            "period": 2,
+                            "id": 3
+                        },
+                        {
+                            "period": 2,
+                            "id": 4
                         }
                     ],
                     "prerequisite": []
@@ -75,7 +91,7 @@
                     "unlock": [
                         {
                             "period": 1,
-                            "course": 5
+                            "id": 5
                         }
                     ],
                     "prerequisite": []
@@ -95,11 +111,20 @@
                     "workload": 67, 
                     "period": 1,
                     "id": 0,
-                    "unlock": [],
+                    "unlock": [
+                        {
+                            "period": 2,
+                            "id": 0
+                        },
+                        {
+                            "period": 3,
+                            "id": 0
+                        }
+                    ],
                     "prerequisite": [
                         {
                             "period": 0,
-                            "course": 0
+                            "id": 0
                         }
                     ]
                 }, 
@@ -124,15 +149,28 @@
                     "workload": 67, 
                     "period": 1,
                     "id": 3,
-                    "unlock": [],
+                    "unlock": [
+                        {
+                            "period": 2,
+                            "id": 2
+                        },
+                        {
+                            "period": 3,
+                            "id": 2
+                        }, 
+                        {
+                            "period": 3,
+                            "id": 3
+                        }
+                    ],
                     "prerequisite": [
                         {
                             "period": 0,
-                            "course": 3
+                            "id": 3
                         },
                         {
                             "period": 0,
-                            "course": 4
+                            "id": 4
                         }
                     ]
                 }, 
@@ -145,11 +183,11 @@
                     "prerequisite": [
                         {
                             "period": 0,
-                            "course": 3
+                            "id": 3
                         },
                         {
                             "period": 0,
-                            "course": 4
+                            "id": 4
                         }
                     ]
                 },
@@ -158,11 +196,16 @@
                     "workload": 67, 
                     "period": 1,
                     "id": 5,
-                    "unlock": [],
+                    "unlock": [
+                        {
+                            "period": 2,
+                            "id": 5
+                        }
+                    ],
                     "prerequisite": [
                         {
                             "period": 0,
-                            "course": 5
+                            "id": 5
                         }
                     ]
                 }, 
@@ -185,7 +228,7 @@
                     "prerequisite": [
                         {
                             "period": 1,
-                            "course": 0
+                            "id": 0
                         }
                     ]
                 }, 
@@ -202,11 +245,13 @@
                     "workload": 67, 
                     "period": 2,
                     "id": 2,
-                    "unlock": [],
+                    "unlock": [
+                        
+                    ],
                     "prerequisite": [
                         {
                             "period": 1,
-                            "course": 3
+                            "id": 3
                         }
                     ]
                 }, 
@@ -219,11 +264,11 @@
                     "prerequisite": [
                         {
                             "period": 0,
-                            "course": 3
+                            "id": 3
                         },
                         {
                             "period": 0,
-                            "course": 4
+                            "id": 4
                         }
                     ]
                 }, 
@@ -236,11 +281,11 @@
                     "prerequisite": [
                         {
                             "period": 0,
-                            "course": 3
+                            "id": 3
                         },
                         {
                             "period": 0,
-                            "course": 4
+                            "id": 4
                         }
                     ]
                 },
@@ -249,11 +294,20 @@
                     "workload": 67, 
                     "period": 2,
                     "id": 5,
-                    "unlock": [],
+                    "unlock": [
+                        {
+                            "period": 3,
+                            "id": 4
+                        }, 
+                        {
+                            "period": 3,
+                            "id": 3
+                        }
+                    ],
                     "prerequisite": [
                         {
                             "period": 1,
-                            "course": 5
+                            "id": 5
                         }
                     ]
                 }
@@ -268,7 +322,7 @@
                     "prerequisite": [
                         {
                             "period": 1,
-                            "course": 0
+                            "id": 0
                         }
                     ]
                 }, 
@@ -289,7 +343,7 @@
                     "prerequisite": [
                         {
                             "period": 1,
-                            "course": 3
+                            "id": 3
                         }
                     ]
                 }, 
@@ -302,11 +356,11 @@
                     "prerequisite": [
                         {
                             "period": 1,
-                            "course": 3
+                            "id": 3
                         },
                         {
                             "period": 2,
-                            "course": 5
+                            "id": 5
                         }
                     ]
                 }, 
@@ -319,7 +373,7 @@
                     "prerequisite": [
                         {
                             "period": 2,
-                            "course": 5
+                            "id": 5
                         }   
                     ]
                 }
@@ -334,7 +388,7 @@
                     "prerequisite": [
                         {
                             "period": 2,
-                            "course": 0
+                            "id": 0
                         }
                     ]
                 }, 
@@ -347,7 +401,7 @@
                     "prerequisite": [
                         {
                             "period": 2,
-                            "course": 0
+                            "id": 0
                         }
                     ]
                 }, 
@@ -360,7 +414,7 @@
                     "prerequisite": [
                         {
                             "period": 1,
-                            "course": 3
+                            "id": 3
                         }
                     ]
                 }, 
@@ -373,7 +427,7 @@
                     "prerequisite": [
                         {
                             "period": 1,
-                            "course": 3
+                            "id": 3
                         }
                     ]
                 }, 
@@ -386,7 +440,7 @@
                     "prerequisite": [
                         {
                             "period": 2,
-                            "course": 5
+                            "id": 5
                         }
                     ]
                 }
@@ -401,7 +455,7 @@
                     "prerequisite": [
                         {
                             "period": 4,
-                            "course": 0
+                            "id": 0
                         }
                     ]
                 }, 
@@ -414,7 +468,7 @@
                     "prerequisite": [
                         {
                             "period": 3,
-                            "course": 2
+                            "id": 2
                         }
                     ]
                 }, 
@@ -427,11 +481,11 @@
                     "prerequisite": [
                         {
                             "period": 2,
-                            "course": 3
+                            "id": 3
                         }, 
                         {
                             "period": 2,
-                            "course": 4
+                            "id": 4
                         }
                     ]
                 }, 
@@ -444,7 +498,7 @@
                     "prerequisite": [
                         {
                             "period": 2,
-                            "course": 0
+                            "id": 0
                         }
                     ]
                 }, 
@@ -457,7 +511,7 @@
                     "prerequisite": [
                         {
                             "period": 4,
-                            "course": 4
+                            "id": 4
                         }
                     ]
                 }
@@ -480,7 +534,7 @@
                     "prerequisite": [
                         {
                             "period": 1,
-                            "course": 3
+                            "id": 3
                         }
                     ]
                 }, 
@@ -493,7 +547,7 @@
                     "prerequisite": [
                         {
                             "period": 5,
-                            "course": 2
+                            "id": 2
                         }
                     ]
                 }, 
@@ -514,11 +568,11 @@
                     "prerequisite": [
                         {
                             "period": 4,
-                            "course": 1
+                            "id": 1
                         },
                         {
                             "period": 5,
-                            "course": 3
+                            "id": 3
                         }
                     ]
                 }
@@ -533,15 +587,15 @@
                     "prerequisite": [
                         {
                             "period": 2,
-                            "course": 3
+                            "id": 3
                         },
                         {
                             "period": 2,
-                            "course": 4
+                            "id": 4
                         },
                         {
                             "period": 4,
-                            "course": 3
+                            "id": 3
                         }
                     ]
                 }, 
@@ -554,7 +608,7 @@
                     "prerequisite": [
                         {
                             "period": 6,
-                            "course": 2
+                            "id": 2
                         }
                     ]
                 }, 
@@ -567,7 +621,7 @@
                     "prerequisite": [
                         {
                             "period": 6,
-                            "course": 3
+                            "id": 3
                         }
                     ]
                 }, 
@@ -580,11 +634,11 @@
                     "prerequisite": [
                         {
                             "period": 5,
-                            "course": 0
+                            "id": 0
                         },
                         {
                             "period": 5,
-                            "course": 3
+                            "id": 3
                         }
                     ]
                 }, 
@@ -597,7 +651,7 @@
                     "prerequisite": [
                         {
                             "period": 6,
-                            "course": 4
+                            "id": 4
                         }
                     ]
                 }
@@ -620,7 +674,7 @@
                     "prerequisite": [
                         {
                             "period": 7,
-                            "course": 2
+                            "id": 2
                         }
                     ]
                 }, 
@@ -633,11 +687,11 @@
                     "prerequisite": [
                         {
                             "period": 3,
-                            "course": 3
+                            "id": 3
                         },
                         {
                             "period": 3,
-                            "course": 4
+                            "id": 4
                         }
                     ]
                 }, 
@@ -650,11 +704,11 @@
                     "prerequisite": [
                         {
                             "period": 5,
-                            "course": 0
+                            "id": 0
                         },
                         {
                             "period": 6,
-                            "course": 4
+                            "id": 4
                         }
                     ]
                 }, 
@@ -693,7 +747,7 @@
                     "prerequisite": [
                         {
                             "period": 8,
-                            "course": 1
+                            "id": 1
                         }
                     ]
                 }, 

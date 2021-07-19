@@ -1,8 +1,11 @@
 import React, {useState, useRef} from 'react'; 
+
 import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
-import Course from '../components/Course'; 
 import makeStyles  from '@material-ui/styles/makeStyles';
+import Typography  from '@material-ui/core/Typography';
+
+import Course from '../components/Course'; 
 import data from '../data/data.json' 
 import '../index.css'
 
@@ -38,9 +41,19 @@ const createStateSucceed = () => {
 
 const useStyles = makeStyles((theme) => {
     return ({
-        paper: {
+
+        root: {
+            marginTop: theme.spacing(7), 
+            display: 'flex',
+            justifyContent: 'center', 
+            alignItems: 'flex-start', 
+            flexDirection: 'row',
+            width: '100%'
+        },
+
+        titleColumn: {
             width: 130, 
-            height: 30, 
+            height: 30 , 
             margin: 5, 
             display: "flex",
             justifyContent: "center",
@@ -60,55 +73,79 @@ const useStyles = makeStyles((theme) => {
 })
  
 export default function Grid() {
+
+    const initAvailable = () => {
+        const starterAvailable = createStateAvailable(); 
+        return JSON.parse(localStorage.getItem('available')) || starterAvailable; 
+    }
+
+    const initSucceed = () => {
+        const starterSucceed = createStateSucceed(); 
+        return JSON.parse(localStorage.getItem('succeed')) || starterSucceed; 
+    }
     
     const classes = useStyles(); 
     const courses = data.degree.courses;
-    const [availableCourses, setAvailableCourses] = useState(createStateAvailable());
-    const [succeedCourses, setSucceedCourses] = useState(createStateSucceed());
+    const [availableCourses, setAvailableCourses] = useState(initAvailable());
+    const [succeedCourses, setSucceedCourses] = useState(initSucceed());
     const coursesConection = useRef( new Map() ) 
+
+    const updateLocalStorage = () => {
+        localStorage.setItem('available', JSON.stringify(availableCourses)); 
+        localStorage.setItem('succeed', JSON.stringify(succeedCourses));
+    }
     
-    const handleToChange = (success, course) => {
+    const handleToChange = (success, course)    => {
         const updateSucceedCourses = succeedCourses; 
         updateSucceedCourses[course.period][course.id] = success; 
         setSucceedCourses(updateSucceedCourses); 
-        const checkUnlockCourse = (requisite) => updateSucceedCourses[requisite.period][requisite.course]; 
+        const checkUnlockCourse = (requisite) => updateSucceedCourses[requisite.period][requisite.id]; 
         course.unlock.forEach( notify => {
-            const unlock = courses[notify.period][notify.course].prerequisite.every(checkUnlockCourse); 
-            if ( availableCourses[notify.period][notify.course] !== unlock ) {
+            const unlock = courses[notify.period][notify.id].prerequisite.every(checkUnlockCourse); 
+            if ( availableCourses[notify.period][notify.id] !== unlock ) {
                 const updateAvailableCourses = availableCourses; 
-                updateAvailableCourses[notify.period][notify.course] = unlock;
+                updateAvailableCourses[notify.period][notify.id] = unlock;
                 setAvailableCourses(updateAvailableCourses);
                 
                 // update the specific course  
-                const { name } = courses[notify.period][notify.course]
+                const { name } = courses[notify.period][notify.id]
                 coursesConection.current.get(name).handleToChangeStateCourse(); 
             }
         })
+        updateLocalStorage(); 
     }  
 
 
      
     return (
-        <div className='containerColumns' >
+        <div className={classes.root} >
             {courses.map((semester, periodIndex) => 
                 <div
                     className='containerCourses'   
                     key={periodIndex} 
                 >
                 <Paper
-                    className={classes.paper}
+                    className={classes.titleColumn}
                     elevation={1}
                 > 
-                    <Button variant='text' fullWidth className={classes.period} >
-                        {`${periodIndex+1}º Semestre `}
+                    <Button 
+                        variant='text' 
+                        fullWidth 
+                        className={classes.period}  
+                    >
+                        <Typography variant='caption' color='textSecondary' >
+                            {`${periodIndex+1}º Semestre `}
+                        </Typography>
                     </Button>
                 </Paper>
                     {semester.map((course) => 
+                        
                         <Course 
                             key={course.name}
                             course={course}
                             onSucess={(success, course) => handleToChange(success, course)}
-                            availableCourses={availableCourses} 
+                            starterAvailable={availableCourses[course.period][course.id] }
+                            starterSucceed={succeedCourses[course.period][course.id]}
                             ref={referece => coursesConection.current.set(course.name, referece)}
                         />
                     )} 
