@@ -50,11 +50,11 @@ const useStyles = makeStyles((theme) => {
             alignItems: 'flex-start', 
             flexDirection: 'row',
             width: '100%',
-            margin: '5.5%'
+            margin: '1%'
         },
 
         titleColumn: {
-            width: 150, 
+            width: 140, 
             height: 30 , 
             margin: 5, 
             display: "flex",
@@ -66,10 +66,7 @@ const useStyles = makeStyles((theme) => {
         period: {
             width: 130, 
             height: 30, 
-            textTransform: 'none',
-            fontSize: 12,
             margin: 5, 
-            fontWeight: 'bold', 
         }
     });
 })
@@ -180,7 +177,7 @@ export default function Grid() {
                         fullWidth 
                         className={classes.period} 
                     >
-                        <Typography variant='caption' color='textSecondary' >
+                        <Typography variant='inherit' color='textSecondary' >
                             {`${periodIndex+1}º Semestre `}
                         </Typography>
                     </Button>

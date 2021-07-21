@@ -8,14 +8,14 @@ import '../../index.css'
 const useStyles = makeStyles((theme, success) => {
     return ({
         course: {
-            width: 150, 
-            height: 75, 
+            width: 140, 
+            height: 70, 
             padding: 2.5, 
             textTransform: 'none',
             margin: 5, 
         }, 
         text: {
-            width: '90%',
+            width: '95%',
             textAlign: 'left',
         }
     });
