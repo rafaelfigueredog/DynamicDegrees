@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 
-import {createMuiTheme, ThemeProvider} from '@material-ui/core'
+import {createTheme, ThemeProvider} from '@material-ui/core'
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 import Header from './components/Header'
@@ -21,7 +21,7 @@ function App() {
     localStorage.setItem('palette', paletteType); 
   }, [paletteType])
 
-  const theme = createMuiTheme({
+  const theme = createTheme({
     palette: {
       primary: {
         light: '#6fbf73', 

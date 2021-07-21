@@ -24,18 +24,16 @@ const useStyles = makeStyles((theme, success) => {
 
 
 
-const Course = forwardRef(({course, starterAvailable, starterSucceed, onSucess}, ref) => {
+const Course = forwardRef(({course, starterAvailable, starterSucceed, onChange}, ref) => {
     
     const classes = useStyles();      
     const [success, setSuccess] = useState(starterSucceed);
     const [available, setAvailable] = useState(starterAvailable); 
 
-    useImperativeHandle(ref, () => ({
-        handleToChangeStateCourse() {
-          if (available && success) {
-            setSuccess(false);
-          }
-          setAvailable(!available);
+    useImperativeHandle(ref, () => ({ 
+        handleToChangeState(availableUpdate, successUpdate) {
+          setSuccess(successUpdate); 
+          setAvailable(availableUpdate); 
         }
     }));
 
@@ -45,9 +43,9 @@ const Course = forwardRef(({course, starterAvailable, starterSucceed, onSucess},
             disabled={!available}
             color='primary'
             onClick={() => {
-                const change = !success; 
-                setSuccess(change); 
-                onSucess(change, course);
+                const update = !success
+                setSuccess(update)
+                onChange(update, course)
             }}
             variant={success? 'contained' : 'outlined'}
             endIcon={success? <BsCheck color='#fafafa' /> : null }

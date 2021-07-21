@@ -6,6 +6,7 @@ import makeStyles  from '@material-ui/styles/makeStyles';
 import Typography  from '@material-ui/core/Typography';
 
 import Course from '../components/Course'; 
+import Stack from '../classes/Stack';
 import data from '../data/data.json' 
 import '../index.css'
 
@@ -94,29 +95,72 @@ export default function Grid() {
         localStorage.setItem('available', JSON.stringify(availableCourses)); 
         localStorage.setItem('succeed', JSON.stringify(succeedCourses));
     }
+
+    const updateSucceedMap = (course, state) => {
+        const updateSucceedMap = succeedCourses; 
+        updateSucceedMap[course.period][course.id] = state; 
+        setSucceedCourses(updateSucceedMap); 
+    } 
+
+    const updateAvailableMap = (course, state) => {
+        const updateAvailableMap = availableCourses; 
+        updateAvailableMap[course.period][course.id] = state;
+        setAvailableCourses(updateAvailableMap);
+    }
+
+    const checkUnlockCourse = (requisite) => { 
+        return succeedCourses[requisite.period][requisite.id]; 
+    }
     
-    const handleToChange = (success, course)    => {
-        const updateSucceedCourses = succeedCourses; 
-        updateSucceedCourses[course.period][course.id] = success; 
-        setSucceedCourses(updateSucceedCourses); 
-        const checkUnlockCourse = (requisite) => updateSucceedCourses[requisite.period][requisite.id]; 
-        course.unlock.forEach( notify => {
+    const unlockConnections = (course, state) => {
+        updateSucceedMap(course, state) 
+        const notificationsList = course.unlock; 
+        for (let notify of notificationsList)  {
+            // This line check if all prerequisites are ok. 
             const unlock = courses[notify.period][notify.id].prerequisite.every(checkUnlockCourse); 
             if ( availableCourses[notify.period][notify.id] !== unlock ) {
                 const updateAvailableCourses = availableCourses; 
                 updateAvailableCourses[notify.period][notify.id] = unlock;
                 setAvailableCourses(updateAvailableCourses);
-                
-                // update the specific course  
                 const { name } = courses[notify.period][notify.id]
-                coursesConection.current.get(name).handleToChangeStateCourse(); 
+                coursesConection.current.get(name).handleToChangeState(true, false); 
             }
-        })
+        }        
+    }
+
+    const lockConnections = (course, state) => {
+
+        // update current state of root notes 
+        updateSucceedMap(course, state) 
+    
+        // get stack for connections 
+        let connections = new Stack()
+        connections.push(course)
+
+        while ( !connections.isEmpty() ) {
+
+            let connection = connections.top(); 
+            connections.pop(); 
+
+            if (connection.name !== course.name) {
+                updateSucceedMap(connection, state); 
+                updateAvailableMap(connection, state); 
+                coursesConection.current.get(connection.name).handleToChangeState(false, false); 
+            } 
+
+            const notificationsList = connection.unlock; 
+            for (let notify of notificationsList)  {
+                connections.push(courses[notify.period][notify.id]);
+            }
+        }
+    }
+
+
+    const handleToChange = (state, course) => {
+        state ? unlockConnections(course, state) : lockConnections(course, state)
         updateLocalStorage(); 
     }  
 
-
-     
     return (
         <div className={classes.root} >
             {courses.map((semester, periodIndex) => 
@@ -143,7 +187,7 @@ export default function Grid() {
                         <Course 
                             key={course.name}
                             course={course}
-                            onSucess={(success, course) => handleToChange(success, course)}
+                            onChange={(state, course) => handleToChange(state, course)}
                             starterAvailable={availableCourses[course.period][course.id] }
                             starterSucceed={succeedCourses[course.period][course.id]}
                             ref={referece => coursesConection.current.set(course.name, referece)}
