@@ -5,7 +5,7 @@ import Typography  from '@material-ui/core/Typography';
 
 import '../../index.css'
  
-const useStyles = makeStyles((theme, success) => {
+const useStyles = makeStyles((theme, Active) => {
     return ({
         course: {
             width: 140, 
@@ -23,27 +23,24 @@ const useStyles = makeStyles((theme, success) => {
 
 
 
-const Course = forwardRef(({course, starterAvailable, starterSucceed, onChange}, ref) => {
+const Course = forwardRef(({course, onChange}, ref) => {
     
     const classes = useStyles();      
-    const [success, setSuccess] = useState(starterSucceed);
-    const [available, setAvailable] = useState(starterAvailable); 
+    const [active, setActive] = useState(false);
 
     useImperativeHandle(ref, () => ({ 
-        handleToChangeState(availableUpdate, successUpdate) {
-          setSuccess(successUpdate); 
-          setAvailable(availableUpdate); 
+        setState(state) {
+            setActive(state)
         }
     }));
 
     return (
         <Button 
             className={classes.course}
-            disabled={!available}
-            color={success? 'primary' : 'secondary' }
+            color={active? 'primary' : 'secondary' }
             onClick={() => {
-                const update = !success
-                setSuccess(update)
+                const update = !active
+                setActive(update)
                 onChange(update, course)
             }}
             variant='contained'
@@ -52,7 +49,7 @@ const Course = forwardRef(({course, starterAvailable, starterSucceed, onChange},
                 className={classes.text} 
                 variant='caption'
                 align='left' 
-                color={ success ? 'textPrimary' : 'textSecondary' } 
+                color='textPrimary' 
             >
                 {course.name} 
             </Typography>

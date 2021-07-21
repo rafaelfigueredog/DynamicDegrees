@@ -10,22 +10,6 @@ import Stack from '../classes/Stack';
 import data from '../data/data.json' 
 import '../index.css'
 
-const createStateAvailable = () => {
-    const courses = data.degree.courses; 
-    const availableState = []; 
-    for (let i = 0; i < data.degree.semesters; i++) {
-        availableState.push([]); 
-    } 
-    courses.forEach((period, index) => {
-        period.forEach(course => {
-            const prerequisite = course.prerequisite; 
-            const state = prerequisite.length === 0? true : false 
-            availableState[index].push(state);
-        });
-    });
-    return availableState; 
-}
-
 const createStateSucceed = () => {
     const courses = data.degree.courses; 
     const succeedState = []; 
@@ -73,24 +57,17 @@ const useStyles = makeStyles((theme) => {
  
 export default function Grid() {
 
-    const initAvailable = () => {
-        const starterAvailable = createStateAvailable(); 
-        return JSON.parse(localStorage.getItem('available')) || starterAvailable; 
-    }
-
-    const initSucceed = () => {
+    const recover = () => {
         const starterSucceed = createStateSucceed(); 
         return JSON.parse(localStorage.getItem('succeed')) || starterSucceed; 
     }
     
     const classes = useStyles(); 
     const courses = data.degree.courses;
-    const [availableCourses, setAvailableCourses] = useState(initAvailable());
-    const [succeedCourses, setSucceedCourses] = useState(initSucceed());
-    const coursesConection = useRef( new Map() ) 
+    const [succeedCourses, setSucceedCourses] = useState(recover());
+    const references = useRef( new Map() ) 
 
     const updateLocalStorage = () => {
-        localStorage.setItem('available', JSON.stringify(availableCourses)); 
         localStorage.setItem('succeed', JSON.stringify(succeedCourses));
     }
 
@@ -100,52 +77,17 @@ export default function Grid() {
         setSucceedCourses(updateSucceedMap); 
     } 
 
-    const updateAvailableMap = (course, state) => {
-        const updateAvailableMap = availableCourses; 
-        updateAvailableMap[course.period][course.id] = state;
-        setAvailableCourses(updateAvailableMap);
-    }
-
-    const checkUnlockCourse = (requisite) => { 
-        return succeedCourses[requisite.period][requisite.id]; 
-    }
-    
-    const unlockConnections = (course, state) => {
-        updateSucceedMap(course, state) 
-        const notificationsList = course.unlock; 
-        for (let notify of notificationsList)  {
-            // This line check if all prerequisites are ok. 
-            const unlock = courses[notify.period][notify.id].prerequisite.every(checkUnlockCourse); 
-            if ( availableCourses[notify.period][notify.id] !== unlock ) {
-                const updateAvailableCourses = availableCourses; 
-                updateAvailableCourses[notify.period][notify.id] = unlock;
-                setAvailableCourses(updateAvailableCourses);
-                const { name } = courses[notify.period][notify.id]
-                coursesConection.current.get(name).handleToChangeState(true, false); 
-            }
-        }        
-    }
-
     const lockConnections = (course, state) => {
-
-        // update current state of root notes 
         updateSucceedMap(course, state) 
-    
-        // get stack for connections 
         let connections = new Stack()
         connections.push(course)
-
         while ( !connections.isEmpty() ) {
-
             let connection = connections.top(); 
             connections.pop(); 
-
             if (connection.name !== course.name) {
                 updateSucceedMap(connection, state); 
-                updateAvailableMap(connection, state); 
-                coursesConection.current.get(connection.name).handleToChangeState(false, false); 
+                references.current.get(connection.name).setState(state); 
             } 
-
             const notificationsList = connection.unlock; 
             for (let notify of notificationsList)  {
                 connections.push(courses[notify.period][notify.id]);
@@ -153,20 +95,53 @@ export default function Grid() {
         }
     }
 
+    const unlockPreConnections = (course, state) => {
+        updateSucceedMap(course, state) 
+        let connections = new Stack()
+        connections.push(course)
+        while ( !connections.isEmpty() ) {
+            let connection = connections.top(); 
+            connections.pop(); 
+            if (connection.name !== course.name) {
+                updateSucceedMap(connection, state); 
+                references.current.get(connection.name).setState(state); 
+            }
+            const notificationsList = connection.prerequisite; 
+            for (let notify of notificationsList)  {
+                connections.push(courses[notify.period][notify.id]);
+            }
+        }
+    }
+
+    const activate = (course, state) => {
+        unlockPreConnections(course, state)
+    }
+
+    const deactivate = (course, state) => {
+        lockConnections(course, state)
+    }
 
     const handleToChange = (state, course) => {
-        state ? unlockConnections(course, state) : lockConnections(course, state)
+        state ? activate(course, state) : deactivate(course, state)
         updateLocalStorage(); 
     }  
 
     
+    const handleSemester = (semester) => {
+        const state = succeedCourses[semester].every(state => state)     
+        for (let course of courses[semester]) {
+            references.current.get(course.name).setState(!state);
+            handleToChange(!state, course); 
+        }
+    }
+    
 
     return (
         <div className={classes.root} >
-            {courses.map((semester, periodIndex) => 
+            {courses.map((semester, period) => 
                 <div
                     className='containerCourses'   
-                    key={periodIndex} 
+                    key={period} 
                 >
                 <Paper
                     className={classes.titleColumn}
@@ -176,9 +151,10 @@ export default function Grid() {
                         variant='text' 
                         fullWidth 
                         className={classes.period} 
+                        onClick={() => handleSemester(period)}
                     >
                         <Typography variant='inherit' color='textSecondary' >
-                            {`${periodIndex+1}º Semestre `}
+                            {`${period+1}º Semestre `}
                         </Typography>
                     </Button>
                 </Paper>
@@ -188,9 +164,8 @@ export default function Grid() {
                             key={course.name}
                             course={course}
                             onChange={(state, course) => handleToChange(state, course)}
-                            starterAvailable={availableCourses[course.period][course.id] }
                             starterSucceed={succeedCourses[course.period][course.id]}
-                            ref={referece => coursesConection.current.set(course.name, referece)}
+                            ref={referece => references.current.set(course.name, referece)}
                         />
                     )} 
                 </div>

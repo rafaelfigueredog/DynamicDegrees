@@ -29,9 +29,9 @@ function App() {
         dark: '#357a38'
       },
       secondary: {  
-        light: '#739574', 
-        main: '#a5d6a7',
-        dark: '#b7deb8'
+        light: '#757575', 
+        main: '#616161',
+        dark: '#424242'
       }, 
       text: {
         primary: '#fafafa', 
