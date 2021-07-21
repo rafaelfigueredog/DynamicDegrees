@@ -28,10 +28,10 @@ function App() {
         main: '#4caf50',
         dark: '#357a38'
       },
-      secondary: {
-        light: '#357a38', 
-        main: '#4caf50',
-        dark: '#6fbf73'
+      secondary: {  
+        light: '#739574', 
+        main: '#a5d6a7',
+        dark: '#b7deb8'
       }, 
       text: {
         primary: '#fafafa', 

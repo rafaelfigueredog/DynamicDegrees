@@ -44,16 +44,17 @@ const useStyles = makeStyles((theme) => {
     return ({
 
         root: {
-            marginTop: theme.spacing(7), 
+            marginTop: theme.spacing(12), 
             display: 'flex',
-            justifyContent: 'center', 
+            justifyContent: 'flex-start', 
             alignItems: 'flex-start', 
             flexDirection: 'row',
-            width: '100%'
+            width: '100%',
+            margin: '5.5%'
         },
 
         titleColumn: {
-            width: 130, 
+            width: 150, 
             height: 30 , 
             margin: 5, 
             display: "flex",
@@ -66,7 +67,7 @@ const useStyles = makeStyles((theme) => {
             width: 130, 
             height: 30, 
             textTransform: 'none',
-            fontSize: 10,
+            fontSize: 12,
             margin: 5, 
             fontWeight: 'bold', 
         }
@@ -161,6 +162,8 @@ export default function Grid() {
         updateLocalStorage(); 
     }  
 
+    
+
     return (
         <div className={classes.root} >
             {courses.map((semester, periodIndex) => 
@@ -175,7 +178,7 @@ export default function Grid() {
                     <Button 
                         variant='text' 
                         fullWidth 
-                        className={classes.period}  
+                        className={classes.period} 
                     >
                         <Typography variant='caption' color='textSecondary' >
                             {`${periodIndex+1}º Semestre `}
