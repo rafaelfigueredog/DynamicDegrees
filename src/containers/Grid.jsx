@@ -164,7 +164,7 @@ export default function Grid() {
                             key={course.name}
                             course={course}
                             onChange={(state, course) => handleToChange(state, course)}
-                            starterSucceed={succeedCourses[course.period][course.id]}
+                            status={succeedCourses[course.period][course.id]}
                             ref={referece => references.current.set(course.name, referece)}
                         />
                     )} 

@@ -23,10 +23,10 @@ const useStyles = makeStyles((theme, Active) => {
 
 
 
-const Course = forwardRef(({course, onChange}, ref) => {
+const Course = forwardRef(({course, onChange, status}, ref) => {
     
     const classes = useStyles();      
-    const [active, setActive] = useState(false);
+    const [active, setActive] = useState(status);
 
     useImperativeHandle(ref, () => ({ 
         setState(state) {
