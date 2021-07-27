@@ -32,9 +32,9 @@ export default function Footer() {
   
     return (
         <Paper className={classes.footer}>
-            <Link className={classes.text} color='textSecondary' > Sobre </Link>
-            <Link className={classes.text} color='textSecondary' > Site do IFPB </Link>
-            <Link className={classes.text} color='textSecondary' > Repositório </Link>
+            <Link className={classes.text} href='https://www.linkedin.com/in/rafaelfigueredog/' > Criador </Link>
+            <Link className={classes.text} > Sobre </Link>
+            <Link className={classes.text} href='https://www.ifpb.edu.br/' > IFPB </Link>
         </Paper>
     )
 }
