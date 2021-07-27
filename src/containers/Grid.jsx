@@ -10,6 +10,25 @@ import Stack from '../classes/Stack';
 import data from '../data/data.json' 
 import '../index.css'
 
+const recoveredAvailable =  JSON.parse(localStorage.getItem('available')); 
+const recoveredSucceed = JSON.parse(localStorage.getItem('succeed')); 
+
+const createStateAvailable = () => {
+    const courses = data.degree.courses; 
+    const availableState = []; 
+    for (let i = 0; i < data.degree.semesters; i++) {
+        availableState.push([]); 
+    } 
+    courses.forEach((period, index) => {
+        period.forEach(course => {
+            const prerequisite = course.prerequisite; 
+            const state = prerequisite.length === 0? true : false 
+            availableState[index].push(state);
+        });
+    });
+    return availableState; 
+}
+
 const createStateSucceed = () => {
     const courses = data.degree.courses; 
     const succeedState = []; 
@@ -22,6 +41,20 @@ const createStateSucceed = () => {
         });
     });
     return succeedState; 
+}
+
+const recoverAvailable = () => {
+    if (recoveredAvailable && recoveredSucceed) {
+        return recoveredAvailable; 
+    }
+    return createStateAvailable(); 
+}
+
+const recoverSucceed = () => {
+    if (recoveredAvailable && recoveredSucceed) {
+        return recoveredSucceed; 
+    }
+    return createStateSucceed(); 
 }
 
 const useStyles = makeStyles((theme) => {
@@ -54,75 +87,104 @@ const useStyles = makeStyles((theme) => {
         }
     });
 })
- 
-export default function Grid() {
 
-    const recover = () => {
-        const starterSucceed = createStateSucceed(); 
-        return JSON.parse(localStorage.getItem('succeed')) || starterSucceed; 
-    }
+export default function Grid() {
     
     const classes = useStyles(); 
     const courses = data.degree.courses;
-    const [succeedCourses, setSucceedCourses] = useState(recover());
+    const [availableCourses, setAvailableCourses] = useState(recoverAvailable());
+    const [succeedCourses, setSucceedCourses] = useState(recoverSucceed());
     const references = useRef( new Map() ) 
 
     const updateLocalStorage = () => {
         localStorage.setItem('succeed', JSON.stringify(succeedCourses));
+        localStorage.setItem('available', JSON.stringify(availableCourses));
     }
-
+   
     const updateSucceedMap = (course, state) => {
         const updateSucceedMap = succeedCourses; 
         updateSucceedMap[course.period][course.id] = state; 
         setSucceedCourses(updateSucceedMap); 
     } 
 
-    const lockConnections = (course, state) => {
-        updateSucceedMap(course, state) 
+
+    const checkUnlockCourse = (requisite) => { 
+        return succeedCourses[requisite.period][requisite.id]; 
+    }
+
+    const updateAvailableCourses = (course) => {
+        const unlock = courses[course.period][course.id].prerequisite.every(checkUnlockCourse); 
+        if ( availableCourses[course.period][course.id] !== unlock ) {
+            const updateAvailableCourses = availableCourses; 
+            updateAvailableCourses[course.period][course.id] = unlock;
+            setAvailableCourses(updateAvailableCourses);
+            const { name } = courses[course.period][course.id]
+            const active = succeedCourses[course.period][course.id]; 
+            references.current.get(name).setState(unlock, active); 
+        }
+    }
+
+    const unlockConnections = (course) => {
+        
+        updateSucceedMap(course, true) 
+
         let connections = new Stack()
         connections.push(course)
+
         while ( !connections.isEmpty() ) {
+            
             let connection = connections.top(); 
             connections.pop(); 
+
             if (connection.name !== course.name) {
-                updateSucceedMap(connection, state); 
-                references.current.get(connection.name).setState(state); 
+                updateSucceedMap(connection, true);  
+                for (let toUnlock of connection.unlock) {
+                    updateAvailableCourses(toUnlock); 
+                }
+                references.current.get(connection.name).setState(true, true);
+            }
+            
+            for (let notify of connection.prerequisite)  {
+                connections.push(courses[notify.period][notify.id]);
+            }
+
+        }
+
+        for (let toUnlock of course.unlock)  {
+            updateAvailableCourses(toUnlock); 
+        }
+        
+
+    }
+
+    const lockConnections = (course) => {
+        
+        updateSucceedMap(course, false) 
+
+        let connections = new Stack()
+        connections.push(course)
+
+        while ( !connections.isEmpty() ) {
+
+            let connection = connections.top(); 
+            connections.pop(); 
+
+            if (connection.name !== course.name) {
+                updateSucceedMap(connection, false); 
+                references.current.get(connection.name).setState(false, false); 
+                updateAvailableCourses(connection);
             } 
-            const notificationsList = connection.unlock; 
-            for (let notify of notificationsList)  {
+
+            for (let notify of connection.unlock)  {
                 connections.push(courses[notify.period][notify.id]);
             }
+
         }
     }
 
-    const unlockPreConnections = (course, state) => {
-        updateSucceedMap(course, state) 
-        let connections = new Stack()
-        connections.push(course)
-        while ( !connections.isEmpty() ) {
-            let connection = connections.top(); 
-            connections.pop(); 
-            if (connection.name !== course.name) {
-                updateSucceedMap(connection, state); 
-                references.current.get(connection.name).setState(state); 
-            }
-            const notificationsList = connection.prerequisite; 
-            for (let notify of notificationsList)  {
-                connections.push(courses[notify.period][notify.id]);
-            }
-        }
-    }
-
-    const activate = (course, state) => {
-        unlockPreConnections(course, state)
-    }
-
-    const deactivate = (course, state) => {
-        lockConnections(course, state)
-    }
 
     const handleToChange = (state, course) => {
-        state ? activate(course, state) : deactivate(course, state)
+        state ? unlockConnections(course) : lockConnections(course)
         updateLocalStorage(); 
     }  
 
@@ -130,7 +192,8 @@ export default function Grid() {
     const handleSemester = (semester) => {
         const state = succeedCourses[semester].every(state => state)     
         for (let course of courses[semester]) {
-            references.current.get(course.name).setState(!state);
+            const available = () => !state? !state : availableCourses[course.period][course.id]; 
+            references.current.get(course.name).setState(available,!state);
             handleToChange(!state, course); 
         }
     }
@@ -163,6 +226,7 @@ export default function Grid() {
                         <Course 
                             key={course.name}
                             course={course}
+                            disable={availableCourses[course.period][course.id]}
                             onChange={(state, course) => handleToChange(state, course)}
                             status={succeedCourses[course.period][course.id]}
                             ref={referece => references.current.set(course.name, referece)}

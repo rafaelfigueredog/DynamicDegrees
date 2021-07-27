@@ -5,6 +5,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 
 import Header from './components/Header'
 import Grid  from './containers/Grid'
+import Footer from './components/Footer';
 
 
 
@@ -55,6 +56,7 @@ function App() {
       <CssBaseline/>
       <Header paletteType={paletteType} setPaletteType={setPaletteType} />
       <Grid />
+      <Footer />
     </ThemeProvider>
     </div>
   );
