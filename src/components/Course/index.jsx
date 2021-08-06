@@ -1,12 +1,12 @@
 import React, {useState, forwardRef, useImperativeHandle} from 'react'
 
 import Button from '@material-ui/core/Button'
-import makeStyles  from '@material-ui/styles/makeStyles'
+import makeStyles  from '@material-ui/styles/makeStyles';
 import Typography  from '@material-ui/core/Typography'; 
-
 import '../../index.css'
- 
-const useStyles = makeStyles((theme, available) => {
+
+
+const useStyles = makeStyles((theme, available, active) => {
     return ({
         course: {
             width: 140, 
@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme, available) => {
             padding: 2.5, 
             textTransform: 'none',
             margin: 5, 
+            
         }, 
         text: {
             width: '95%',
@@ -22,7 +23,7 @@ const useStyles = makeStyles((theme, available) => {
     });
 })
 
-const Course = forwardRef(({course, onChange, disable, status}, ref) => {
+const Course = forwardRef(({course, onChange, disable, status, onLegend}, ref) => {
     
         
     const [active, setActive] = useState(status);
@@ -36,6 +37,7 @@ const Course = forwardRef(({course, onChange, disable, status}, ref) => {
     }));
 
     const handleToState = () => {
+        if (onLegend) return; 
         const update = !active 
         if (!available) {
             setAvailable(true);
@@ -44,12 +46,12 @@ const Course = forwardRef(({course, onChange, disable, status}, ref) => {
         onChange(update, course);
     }
 
-    const classes = useStyles(available);  
+    const classes = useStyles(available, active);  
 
     return (
         <Button 
             className={classes.course}
-            color={active? 'primary' : 'secondary'}
+            color={active? 'primary' : 'secondary' }
             onClick={() => handleToState()}
             variant={available? 'contained' : 'outlined' }
         >
@@ -57,10 +59,10 @@ const Course = forwardRef(({course, onChange, disable, status}, ref) => {
                 className={classes.text} 
                 variant='caption'
                 align='left' 
-                color={!available? 'textSecondary' : 'textPrimary'} 
+                color={active? 'error' : 'inherit'}
             >
                 {course.name} 
-            </Typography>
+            </Typography>          
         </Button>
     )
 });

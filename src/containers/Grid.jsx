@@ -65,13 +65,12 @@ const useStyles = makeStyles((theme) => {
             display: 'flex',
             justifyContent: 'flex-start', 
             alignItems: 'flex-start', 
-            flexDirection: 'row',
-            width: '100%',
-            margin: '1%'
+            flexDirection: 'row',   
+            marginLeft: theme.spacing(2), 
         },
 
         titleColumn: {
-            width: 140, 
+            width: 141, 
             height: 30 , 
             margin: 5, 
             display: "flex",

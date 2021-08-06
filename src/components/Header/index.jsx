@@ -6,6 +6,7 @@ import Tooltip  from '@material-ui/core/Tooltip'
 import AppBar  from '@material-ui/core/AppBar'
 import Toolbar  from '@material-ui/core/Toolbar'
 import IconButton from '@material-ui/core/IconButton'
+import Link from '@material-ui/core/Link'
 import Brightness7Icon from '@material-ui/icons/Brightness7'
 import Brightness4Icon from '@material-ui/icons/Brightness4'
 
@@ -29,8 +30,10 @@ const useStyles = makeStyles((theme) => {
         avatar: {
             margin: theme.spacing(2), 
         }, 
-        
-        toolbar: theme.mixins.toolbar, 
+
+        links: {
+            margin: theme.spacing(1,1)
+        }
     }
 })
 
@@ -41,19 +44,22 @@ export default function Header( {paletteType, setPaletteType} ) {
     const classes = useStyles(); 
 
     return (
-        <AppBar className={classes.AppBar} elevation={1} >
+        <AppBar className={classes.AppBar} elevation={0} >
             <Toolbar>
                 <img src={paletteType? logoLight : logoDark } className={classes.img} alt='logo'/>
-                <Typography variant='h6' color='textSecondary'className={classes.date}>
-                    Grade Curricular
+                <Typography variant='h6' color='textSecondary' className={classes.date}>
+                    Grade Curricular    
                     <span> 
                         <Typography > Engenharia de Computação </Typography>
                     </span>
                 </Typography>  
 
+                <Link className={classes.links} href='/' > Matriz  </Link>
+                <Link className={classes.links} href='/docs' > Documentação </Link>
+                <Link className={classes.links} href='/about' > Sobre </Link>
                 
                 <Tooltip title={!paletteType? 'Tema claro' : 'Tema escuro' } >
-                    <IconButton onClick={() => setPaletteType(!paletteType)} >
+                    <IconButton onClick={() => setPaletteType(!paletteType)} color='primary' >
                         { paletteType?  <Brightness4Icon /> : <Brightness7Icon /> }
                     </IconButton>
                 </Tooltip>

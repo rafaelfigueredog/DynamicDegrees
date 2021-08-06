@@ -3,12 +3,7 @@ import React, {useState, useEffect} from 'react'
 import {createTheme, ThemeProvider} from '@material-ui/core'
 import CssBaseline from '@material-ui/core/CssBaseline';
 
-import Header from './components/Header'
-import Grid  from './containers/Grid'
-import Footer from './components/Footer';
-
-
-
+import Routes from './Routes';
 
 function App() {
 
@@ -29,13 +24,16 @@ function App() {
         main: '#4caf50',
         dark: '#357a38'
       },
+      error: {
+        main: '#fff'
+      },
       secondary: {  
         light: '#757575', 
         main: '#616161',
         dark: '#424242'
       }, 
-      text: {
-        primary: '#fafafa', 
+      background: {
+        default: paletteType? '#EEEEEE' : '#303030',
       },
       type: paletteType? 'light' : 'dark', 
     },
@@ -51,13 +49,11 @@ function App() {
 
 
   return (
-    <div className='App'>
-    <ThemeProvider theme={theme} >
-      <CssBaseline/>
-      <Header paletteType={paletteType} setPaletteType={setPaletteType} />
-      <Grid />
-      <Footer />
-    </ThemeProvider>
+    <div>
+      <ThemeProvider theme={theme} >
+        <CssBaseline/>
+        <Routes paletteType={paletteType} setPaletteType={setPaletteType} />
+      </ThemeProvider>
     </div>
   );
 }
