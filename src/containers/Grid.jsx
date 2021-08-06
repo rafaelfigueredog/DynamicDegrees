@@ -66,13 +66,14 @@ const useStyles = makeStyles((theme) => {
             justifyContent: 'flex-start', 
             alignItems: 'flex-start', 
             flexDirection: 'row',   
-            marginLeft: theme.spacing(2), 
+            marginLeft: 'auto',
+            marginRight: 'auto' 
         },
 
         titleColumn: {
-            width: 141, 
+            width: 140, 
             height: 30 , 
-            margin: 5, 
+            margin: 4, 
             display: "flex",
             justifyContent: "center",
             alignItems: 'center',
@@ -82,7 +83,7 @@ const useStyles = makeStyles((theme) => {
         period: {
             width: 130, 
             height: 30, 
-            margin: 5, 
+            margin: 4, 
         }
     });
 })

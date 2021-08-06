@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme, available, active) => {
             height: 70, 
             padding: 2.5, 
             textTransform: 'none',
-            margin: 5, 
+            margin: 4, 
             
         }, 
         text: {
