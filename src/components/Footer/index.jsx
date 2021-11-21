@@ -28,7 +28,7 @@ export default function Footer() {
   
     return (
         <footer className={classes.footer}>
-            <Link className={classes.text} href='/' > Matriz  </Link>
+            <Link className={classes.text} href='/' > Cursos  </Link>
             <Link className={classes.text} href='/docs' > Documentação </Link>
             <Link className={classes.text} href='/about' > Sobre </Link>
             <Link className={classes.text} target="_blanck" href='https://www.ifpb.edu.br/' > IFPB Oficial </Link>

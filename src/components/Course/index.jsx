@@ -1,5 +1,4 @@
 import React, {useState, forwardRef, useImperativeHandle} from 'react'
-
 import Button from '@material-ui/core/Button'
 import makeStyles  from '@material-ui/styles/makeStyles';
 import Typography  from '@material-ui/core/Typography'; 
@@ -13,12 +12,12 @@ const useStyles = makeStyles((theme, available, active) => {
             height: 70, 
             padding: 2.5, 
             textTransform: 'none',
-            margin: 4, 
-            
+            margin: 4,  
         }, 
         text: {
             width: '95%',
             textAlign: 'left',
+            fontSize: 12, 
         }
     });
 })
