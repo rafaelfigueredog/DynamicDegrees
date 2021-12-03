@@ -14,7 +14,7 @@ import '../index.css'
 
 
 
-export default function Grid({id, course}) {
+export default function Grid({id, course, updateProgress, progress}) {
 
     const classes = useStyles(); 
     const references = useRef( new Map() ) 
@@ -23,7 +23,8 @@ export default function Grid({id, course}) {
     const [succeedCourses, setSucceedCourses] = useState(recoverSucceed(id, components, semesters)); 
     
 
-    const updateLocalStorage = () => {  
+
+    function updateLocalStorage() {
         localStorage.setItem(`succeed:${id}`, JSON.stringify(succeedCourses));
         localStorage.setItem(`available:${id}`, JSON.stringify(availableCourses));
     }
@@ -31,6 +32,7 @@ export default function Grid({id, course}) {
     const updateSucceedMap = (course, state) => {
         const updateSucceedMap = succeedCourses; 
         updateSucceedMap[course.period][course.id] = state; 
+        updateProgress(updateSucceedMap); 
         setSucceedCourses(updateSucceedMap); 
     } 
 
