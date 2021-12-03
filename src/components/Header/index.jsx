@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => {
 
 
 
-export default function Header( {paletteType, setPaletteType} ) {
+export default function Header( {paletteType, setPaletteType, title} ) {
     
     const classes = useStyles(); 
 
@@ -47,14 +47,18 @@ export default function Header( {paletteType, setPaletteType} ) {
         <AppBar className={classes.AppBar} elevation={0} >
             <Toolbar>
                 <img src={paletteType? logoLight : logoDark } className={classes.img} alt='logo'/>
-                <Typography variant='h6' color='textSecondary' className={classes.date}>
-                    Grade Curricular    
-                    <span> 
-                        <Typography > Engenharia de Computação </Typography>
-                    </span>
+                <Typography variant='h6' color='textSecondary' className={classes.date} >
+                    Cursos IFPB <br/>
+                    <Typography variant='body2' >
+                        Campina Grande
+                    </Typography>
                 </Typography>  
-
-                <Link className={classes.links} href='/' > Matriz  </Link>
+                <Typography 
+                    className={classes.date} 
+                    variant='overline' 
+                    color='textSecondary'
+                > {title} </Typography>
+                <Link className={classes.links} href='/courses' > Cursos </Link>    
                 <Link className={classes.links} href='/docs' > Documentação </Link>
                 <Link className={classes.links} href='/about' > Sobre </Link>
                 
