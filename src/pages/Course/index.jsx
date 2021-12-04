@@ -54,7 +54,7 @@ export default function Course({paletteType, setPaletteType}) {
                 setPaletteType={setPaletteType} 
                 title={courseName}
             />
-            <ContainerGrid>
+            <ContainerGrid> 
                 <LinearProgressWithLabel value={progress} id={id} />
                 <Grid 
                     id={id} 
