@@ -2,10 +2,11 @@ import styled from "styled-components";
 
 export const ContainerGrid = styled.div`
     margin-top: 10vh;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 9fr;
-    grid-row-gap: 2vh;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    grid-row-gap: 1vh;
     margin-left: auto;
     margin-right: auto;
 `
