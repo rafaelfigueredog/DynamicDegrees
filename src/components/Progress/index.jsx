@@ -35,7 +35,7 @@ function LinearProgressWithLabel(props) {
        <Typography 
           variant='caption' 
           color='textSecondary'
-      > Coeficiente de Progressão </Typography>
+      > Coeficiente de Progressão Baseado na Carga Horária</Typography>
       <Box className={classes.container} >
         <Box className={classes.progress} >
           <LinearProgress 
