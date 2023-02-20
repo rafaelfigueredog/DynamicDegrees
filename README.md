@@ -1,6 +1,8 @@
 # Dynamic Degrees
 Dynamic Degrees is a web application that visualizes the connections between curricular components of IFPB's degree programs. It is implemented using JavaScript and the Depth-First Search algorithm. The application can be accessed at https://dynamicdegrees.netlify.app/courses.
 
+![alt text](https://github.com/rafaelfigueredog/DynamicDegrees/blob/main/screenshot.png?raw=true)
+
 ## Motivation
 The aim of this project is to help students better understand the relationships between the different curricular components of their degree program. By visualizing these relationships, students can make more informed decisions about which courses to take, which prerequisites to fulfill, and which electives to choose.
 
