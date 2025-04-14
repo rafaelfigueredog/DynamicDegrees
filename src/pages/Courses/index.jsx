@@ -59,16 +59,15 @@ function Courses({paletteType, setPaletteType}) {
                             Engenharia de Computação
                         </Button>
 
-                        {/* TODO: ADD NEW COURSES */}
-              
-                        {/* <Button 
-                            startIcon={<FaLanguage/>} 
+                        <Button 
+                            startIcon={<BsBuilding />} 
                             className={classes.button} 
                             color="primary" 
                             variant="contained"
+                            onClick={() => history.push('/course/3')}
                         >
-                            Letras - Lingua Portuguesa
-                        </Button> */}
+                            Engenharia Civil
+                        </Button>
      
                        {/*  <Button 
                             startIcon={<FaThermometerThreeQuarters/>} 
