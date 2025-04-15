@@ -41,7 +41,7 @@ export default function Informational() {
         <div className={classes.root} >
             <Typography variant='h5' className={classes.heading} > Sobre o Projeto </Typography>
             <Typography variant='body2' className={classes.paragraph} > {data.aboutTheProject}  </Typography>
-            <Typography variant='h5' className={classes.heading} > Sobre o Autor  </Typography>
+            <Typography variant='h5' className={classes.heading} > Sobre os Autores  </Typography>
             <Authors />
         </div>
     )           
