@@ -13,7 +13,7 @@ import { BsFillCpuFill } from "react-icons/bs";
 import { GiSatelliteCommunication } from "react-icons/gi"; 
 // import { FaThermometerThreeQuarters } from "react-icons/fa"; 
 // import { FaLanguage } from "react-icons/fa"
-// import { VscSymbolOperator } from "react-icons/vsc"; 
+import { VscSymbolOperator } from "react-icons/vsc"; 
 
 import { ContainerGrid } from "./styles";
 import { ContainerBody } from "./styles"; 
@@ -78,14 +78,15 @@ function Courses({paletteType, setPaletteType}) {
                             Licenciatura em Física
                         </Button> */}
                  
-                        {/* <Button 
+                        <Button 
                             startIcon={<VscSymbolOperator/>} 
                             className={classes.button} 
                             color="primary" 
                             variant="contained"
+                            onClick={() => history.push('/course/4')}
                         >
-                            Licenciatura de Matemática 
-                        </Button> */}
+                            Licenciatura em Matemática 
+                        </Button>
               
                         <Button 
                             startIcon={<GiSatelliteCommunication/>} 

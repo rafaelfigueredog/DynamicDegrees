@@ -1224,12 +1224,7 @@
         "period": 9,
         "id": 2,
         "unlock": [],
-        "prerequisite": [
-          {
-            "period": 8,
-            "id": 1
-          }
-        ]
+        "prerequisite": []
       },
       {
         "name": "Optativa II",
