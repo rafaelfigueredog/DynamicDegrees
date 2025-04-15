@@ -3,7 +3,8 @@ import edifices from './edificacoes.json';
 import telematics from './telematics.json' 
 import engcivil from './eng-civil.json' 
 import math from './math.json' 
- 
+import physics from './physics.json'
+
 const courses = {
 
     1: {
@@ -26,7 +27,7 @@ const courses = {
         name: engcivil.name,
         semesters: engcivil.semesters, 
         components: engcivil.components, 
-        workTime: 3891
+        workTime: 3871
     },
     
 
@@ -37,12 +38,13 @@ const courses = {
         workTime: 3070
     },
 
-    /*
+    
     5: {
-        name: edifices.name,
-        semesters: edifices.semesters, 
-        components: edifices.components, 
-    }, */
+        name: physics.name,
+        semesters: physics.semesters, 
+        components: physics.components,
+        workTime: 3117
+    },
 
     6: {
         name: telematics.name,

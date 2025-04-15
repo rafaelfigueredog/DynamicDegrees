@@ -11,7 +11,7 @@ import Footer from "../../components/Footer"
 import { BsBuilding  } from "react-icons/bs"; 
 import { BsFillCpuFill } from "react-icons/bs";
 import { GiSatelliteCommunication } from "react-icons/gi"; 
-// import { FaThermometerThreeQuarters } from "react-icons/fa"; 
+import { FaThermometerThreeQuarters } from "react-icons/fa"; 
 // import { FaLanguage } from "react-icons/fa"
 import { VscSymbolOperator } from "react-icons/vsc"; 
 
@@ -68,15 +68,6 @@ function Courses({paletteType, setPaletteType}) {
                         >
                             Engenharia Civil
                         </Button>
-     
-                       {/*  <Button 
-                            startIcon={<FaThermometerThreeQuarters/>} 
-                            className={classes.button} 
-                            color="primary" 
-                            variant="contained"
-                        >
-                            Licenciatura em Física
-                        </Button> */}
                  
                         <Button 
                             startIcon={<VscSymbolOperator/>} 
@@ -86,6 +77,16 @@ function Courses({paletteType, setPaletteType}) {
                             onClick={() => history.push('/course/4')}
                         >
                             Licenciatura em Matemática 
+                        </Button>
+
+                        <Button 
+                            startIcon={<FaThermometerThreeQuarters/>} 
+                            className={classes.button} 
+                            color="primary" 
+                            variant="contained"
+                            onClick={() => history.push('/course/5')}
+                        >
+                            Licenciatura em Física
                         </Button>
               
                         <Button 

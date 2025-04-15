@@ -1,10 +1,10 @@
 {
-  "name": "Curso Superior de Licenciatura em Matemática",
+  "name": "Curso Superior de Licenciatura em Física",
   "semesters": 8,
   "components": [
     [
       {
-        "name": "Matemática para o Ensino Médio 1",
+        "name": "Introdução à Física",
         "workload": 67,
         "period": 0,
         "id": 0,
@@ -21,35 +21,73 @@
         "prerequisite": []
       },
       {
-        "name": "Matemática para o Ensino Fundamental",
+        "name": "Pré-Cálculo",
         "workload": 67,
         "period": 0,
         "id": 1,
         "unlock": [
           {
-            "period": 4,
+            "period": 1,
+            "id": 0
+          },
+          {
+            "period": 1,
             "id": 1
           },
           {
-            "period": 2,
+            "period": 1,
             "id": 2
           },
           {
-            "period": 2,
+            "period": 1,
             "id": 3
           }
         ],
         "prerequisite": []
       },
       {
-        "name": "Trigonometria",
-        "workload": 67,
+        "name": "Psicologia da Aprendizagem",
+        "workload": 33,
         "period": 0,
         "id": 2,
+        "unlock": [],
+        "prerequisite": []
+      },
+      {
+        "name": "Álgebra Vetorial e Geometria Analítica",
+        "workload": 67,
+        "period": 0,
+        "id": 3,
         "unlock": [
           {
             "period": 1,
-            "id": 1
+            "id": 3
+          }
+        ],
+        "prerequisite": []
+      },
+      {
+        "name": "Língua Portuguesa I",
+        "workload": 33,
+        "period": 0,
+        "id": 4,
+        "unlock": [
+          {
+            "period": 1,
+            "id": 4
+          }
+        ],
+        "prerequisite": []
+      },
+      {
+        "name": "Metodologia do Trabalho Científico",
+        "workload": 33,
+        "period": 0,
+        "id": 5,
+        "unlock": [
+          {
+            "period": 7,
+            "id": 4
           }
         ],
         "prerequisite": []
@@ -58,35 +96,6 @@
         "name": "História da Educação",
         "workload": 33,
         "period": 0,
-        "id": 3,
-        "unlock": [],
-        "prerequisite": []
-      },
-      {
-        "name": "Psicologia da Aprendizagem",
-        "workload": 33,
-        "period": 0,
-        "id": 4,
-        "unlock": [],
-        "prerequisite": []
-      },
-      {
-        "name": "Língua Portuguesa 1",
-        "workload": 33,
-        "period": 0,
-        "id": 5,
-        "unlock": [
-          {
-            "period": 1,
-            "id": 5
-          }
-        ],
-        "prerequisite": []
-      },
-      {
-        "name": "Inglês Instrumental",
-        "workload": 33,
-        "period": 0,
         "id": 6,
         "unlock": [],
         "prerequisite": []
@@ -94,7 +103,7 @@
     ],
     [
       {
-        "name": "Matemática para o Ensino Médio 2",
+        "name": "Física Básica I",
         "workload": 67,
         "period": 1,
         "id": 0,
@@ -104,30 +113,38 @@
             "id": 0
           },
           {
-            "period": 3,
-            "id": 0
+            "period": 2,
+            "id": 1
+          },
+          {
+            "period": 4,
+            "id": 6
+          },
+          {
+            "period": 5,
+            "id": 2
           }
         ],
         "prerequisite": [
           {
             "period": 0,
             "id": 0
+          },
+          {
+            "period": 0,
+            "id": 1
           }
         ]
       },
       {
-        "name": "Cálculo 1",
-        "workload": 67,
+        "name": "Física Experimental I",
+        "workload": 33,
         "period": 1,
         "id": 1,
         "unlock": [
           {
             "period": 2,
             "id": 1
-          },
-          {
-            "period": 6,
-            "id": 1
           }
         ],
         "prerequisite": [
@@ -137,32 +154,72 @@
           },
           {
             "period": 0,
-            "id": 2
+            "id": 1
           }
         ]
       },
       {
-        "name": "Algebra Vetorial e Geometria Analítica",
+        "name": "Cálculo Diferencial e Integral I",
         "workload": 67,
         "period": 1,
         "id": 2,
         "unlock": [
           {
-            "period": 3,
+            "period": 2,
             "id": 0
           },
           {
-            "period": 3,
-            "id": 1
+            "period": 2,
+            "id": 2
           }
         ],
-        "prerequisite": []
+        "prerequisite": [
+          {
+            "period": 0,
+            "id": 1
+          }
+        ]
       },
       {
-        "name": "Epistemologia da Matemática",
-        "workload": 33,
+        "name": "Álgebra Linear I",
+        "workload": 67,
         "period": 1,
         "id": 3,
+        "unlock": [],
+        "prerequisite": [
+          {
+            "period": 0,
+            "id": 1
+          },
+          {
+            "period": 0,
+            "id": 3
+          }
+        ]
+      },
+      {
+        "name": "Língua Portuguesa II",
+        "workload": 33,
+        "period": 1,
+        "id": 4,
+        "unlock": [
+          {
+            "period": 7,
+            "id": 4
+          }
+        ],
+        "prerequisite": [
+          {
+            "period": 0,
+            "id": 4
+          }
+        ]
+      },
+      {
+        "name": "Inglês Instrumental",
+        "workload": 33,
+        "period": 1,
+        "id": 5,
         "unlock": [],
         "prerequisite": []
       },
@@ -170,75 +227,70 @@
         "name": "Filosofia da Educação",
         "workload": 33,
         "period": 1,
-        "id": 4,
-        "unlock": [],
-        "prerequisite": []
-      },
-      {
-        "name": "Língua Portuguesa 2",
-        "workload": 33,
-        "period": 1,
-        "id": 5,
-        "unlock": [],
-        "prerequisite": [
-          {
-            "period": 0,
-            "id": 5
-          }
-        ]
-      },
-      {
-        "name": "Educação em Diversidade",
-        "workload": 33,
-        "period": 1,
         "id": 6,
-        "unlock": [
-          {
-            "period": 3,
-            "id": 4
-          }
-        ],
+        "unlock": [],
         "prerequisite": []
       }
     ],
     [
       {
-        "name": "Matemática para o Ensino Médio 3",
+        "name": "Física Básica II",
         "workload": 67,
         "period": 2,
         "id": 0,
-        "unlock": [],
+        "unlock": [
+          {
+            "period": 3,
+            "id": 0
+          },
+          {
+            "period": 3,
+            "id": 1
+          },
+          {
+            "period": 3,
+            "id": 5
+          },
+          {
+            "period": 4,
+            "id": 3
+          },
+          {
+            "period": 5,
+            "id": 6
+          },
+          {
+            "period": 6,
+            "id": 3
+          }
+        ],
         "prerequisite": [
           {
             "period": 1,
             "id": 0
+          },
+          {
+            "period": 1,
+            "id": 2
           }
         ]
       },
       {
-        "name": "Cálculo 2",
-        "workload": 67,
+        "name": "Física Experimental II",
+        "workload": 33,
         "period": 2,
         "id": 1,
         "unlock": [
           {
             "period": 3,
             "id": 1
-          },
-          {
-            "period": 4,
-            "id": 2
-          },
-          {
-            "period": 5,
-            "id": 2
-          },
-          {
-            "period": 7,
-            "id": 2
           }
         ],
         "prerequisite": [
+          {
+            "period": 1,
+            "id": 0
+          },
           {
             "period": 1,
             "id": 1
@@ -246,40 +298,30 @@
         ]
       },
       {
-        "name": "Argumentação Matemática",
+        "name": "Cálculo Diferencial e Integral II",
         "workload": 67,
         "period": 2,
         "id": 2,
         "unlock": [
           {
-            "period": 4,
-            "id": 0
+            "period": 3,
+            "id": 4
           }
         ],
         "prerequisite": [
           {
-            "period": 0,
-            "id": 1
+            "period": 1,
+            "id": 2
           }
         ]
       },
       {
-        "name": "Prática de Lab. de Ensino de Matemática 1",
+        "name": "Química Geral",
         "workload": 67,
         "period": 2,
         "id": 3,
-        "unlock": [
-          {
-            "period": 3,
-            "id": 3
-          }
-        ],
-        "prerequisite": [
-          {
-            "period": 0,
-            "id": 1
-          }
-        ]
+        "unlock": [],
+        "prerequisite": []
       },
       {
         "name": "Sociologia da Educação",
@@ -290,61 +332,68 @@
         "prerequisite": []
       },
       {
-        "name": "Didática Geral",
+        "name": "Educação em Direitos Humanos",
         "workload": 33,
         "period": 2,
         "id": 5,
-        "unlock": [
-          {
-            "period": 3,
-            "id": 2
-          }
-        ],
+        "unlock": [],
+        "prerequisite": []
+      },
+      {
+        "name": "Educação Ambiental e Sustentabilidade",
+        "workload": 33,
+        "period": 2,
+        "id": 6,
+        "unlock": [],
         "prerequisite": []
       }
     ],
     [
       {
-        "name": "Álgebra Linear 1",
+        "name": "Física Básica III",
         "workload": 67,
         "period": 3,
         "id": 0,
         "unlock": [
           {
+            "period": 4,
+            "id": 0
+          },
+          {
+            "period": 4,
+            "id": 1
+          },
+          {
             "period": 6,
-            "id": 2
+            "id": 1
+          },
+          {
+            "period": 6,
+            "id": 5
           }
         ],
         "prerequisite": [
           {
-            "period": 1,
+            "period": 2,
             "id": 0
-          },
-          {
-            "period": 1,
-            "id": 2
           }
         ]
       },
       {
-        "name": "Cálculo 3",
-        "workload": 67,
+        "name": "Física Experimental III",
+        "workload": 33,
         "period": 3,
         "id": 1,
         "unlock": [
           {
-            "period": 6,
-            "id": 0
-          },
-          {
-            "period": 6,
-            "id": 2
+            "period": 4,
+            "id": 1
           }
         ],
         "prerequisite": [
           {
-            "period": 1,
-            "id": 2
+            "period": 2,
+            "id": 0
           },
           {
             "period": 2,
@@ -353,380 +402,425 @@
         ]
       },
       {
-        "name": "Didática de Matemática",
+        "name": "Didática Geral",
         "workload": 67,
         "period": 3,
         "id": 2,
+        "unlock": [
+          {
+            "period": 4,
+            "id": 4
+          },
+          {
+            "period": 4,
+            "id": 6
+          },
+          {
+            "period": 6,
+            "id": 3
+          }
+        ],
+        "prerequisite": []
+      },
+      {
+        "name": "Políticas e Gestão Educacional",
+        "workload": 33,
+        "period": 3,
+        "id": 3,
+        "unlock": [],
+        "prerequisite": []
+      },
+      {
+        "name": "Cálculo Diferencial e Integral III",
+        "workload": 67,
+        "period": 3,
+        "id": 4,
+        "unlock": [
+          {
+            "period": 4,
+            "id": 0
+          },
+          {
+            "period": 4,
+            "id": 2
+          },
+          {
+            "period": 6,
+            "id": 1
+          }
+        ],
+        "prerequisite": [
+          {
+            "period": 2,
+            "id": 2
+          }
+        ]
+      },
+      {
+        "name": "Computação Aplicada à Física",
+        "workload": 33,
+        "period": 3,
+        "id": 5,
         "unlock": [],
         "prerequisite": [
           {
             "period": 2,
+            "id": 0
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "name": "Física Básica IV",
+        "workload": 67,
+        "period": 4,
+        "id": 0,
+        "unlock": [
+          {
+            "period": 5,
+            "id": 0
+          },
+          {
+            "period": 5,
+            "id": 1
+          },
+          {
+            "period": 5,
+            "id": 3
+          },
+          {
+            "period": 7,
+            "id": 6
+          }
+        ],
+        "prerequisite": [
+          {
+            "period": 3,
+            "id": 0
+          },
+          {
+            "period": 3,
+            "id": 4
+          }
+        ]
+      },
+      {
+        "name": "Física Experimental IV",
+        "workload": 33,
+        "period": 4,
+        "id": 1,
+        "unlock": [
+          {
+            "period": 5,
+            "id": 1
+          }
+        ],
+        "prerequisite": [
+          {
+            "period": 3,
+            "id": 0
+          },
+          {
+            "period": 3,
+            "id": 1
+          }
+        ]
+      },
+      {
+        "name": "Física Matemática I",
+        "workload": 67,
+        "period": 4,
+        "id": 2,
+        "unlock": [
+          {
+            "period": 5,
+            "id": 2
+          }
+        ],
+        "prerequisite": [
+          {
+            "period": 3,
+            "id": 4
+          }
+        ]
+      },
+      {
+        "name": "Termodinâmica",
+        "workload": 67,
+        "period": 4,
+        "id": 3,
+        "unlock": [
+          {
+            "period": 7,
+            "id": 3
+          }
+        ],
+        "prerequisite": [
+          {
+            "period": 2,
+            "id": 0
+          }
+        ]
+      },
+      {
+        "name": "Didática Aplicada ao Ensino de Física",
+        "workload": 33,
+        "period": 4,
+        "id": 4,
+        "unlock": [],
+        "prerequisite": [
+          {
+            "period": 3,
+            "id": 2
+          }
+        ]
+      },
+      {
+        "name": "Prática de Ensino I",
+        "workload": 67,
+        "period": 4,
+        "id": 5,
+        "unlock": [
+          {
+            "period": 5,
+            "id": 5
+          }
+        ],
+        "prerequisite": []
+      },
+      {
+        "name": "Estágio Supervisionado I",
+        "workload": 100,
+        "period": 4,
+        "id": 6,
+        "unlock": [
+          {
+            "period": 5,
+            "id": 6
+          }
+        ],
+        "prerequisite": [
+          {
+            "period": 1,
+            "id": 0
+          },
+          {
+            "period": 3,
+            "id": 2
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "name": "Física Moderna",
+        "workload": 67,
+        "period": 5,
+        "id": 0,
+        "unlock": [
+          {
+            "period": 6,
+            "id": 0
+          }
+        ],
+        "prerequisite": [
+          {
+            "period": 4,
+            "id": 0
+          }
+        ]
+      },
+      {
+        "name": "Física Moderna Experimental",
+        "workload": 33,
+        "period": 5,
+        "id": 1,
+        "unlock": [],
+        "prerequisite": [
+          {
+            "period": 4,
+            "id": 0
+          },
+          {
+            "period": 4,
+            "id": 1
+          }
+        ]
+      },
+      {
+        "name": "Mecânica Analítica",
+        "workload": 67,
+        "period": 5,
+        "id": 2,
+        "unlock": [],
+        "prerequisite": [
+          {
+            "period": 1,
+            "id": 0
+          },
+          {
+            "period": 4,
+            "id": 2
+          }
+        ]
+      },
+      {
+        "name": "Evolução do Pensamento Científico",
+        "workload": 67,
+        "period": 5,
+        "id": 3,
+        "unlock": [],
+        "prerequisite": [
+          {
+            "period": 4,
+            "id": 0
+          }
+        ]
+      },
+      {
+        "name": "Educação em Diversidade",
+        "workload": 33,
+        "period": 5,
+        "id": 4,
+        "unlock": [
+          {
+            "period": 7,
+            "id": 0
+          }
+        ],
+        "prerequisite": []
+      },
+      {
+        "name": "Prática de Ensino II",
+        "workload": 67,
+        "period": 5,
+        "id": 5,
+        "unlock": [
+          {
+            "period": 6,
+            "id": 2
+          }
+        ],
+        "prerequisite": [
+          {
+            "period": 4,
             "id": 5
           }
         ]
       },
       {
-        "name": "Prática de Lab. de Ensino de Matemática 2",
-        "workload": 67,
-        "period": 3,
-        "id": 3,
-        "unlock": [
-          {
-            "period": 4,
-            "id": 3
-          },
-          {
-            "period": 4,
-            "id": 4
-          },
-          {
-            "period": 4,
-            "id": 6
-          }
-        ],
-        "prerequisite": [
-          {
-            "period": 2,
-            "id": 3
-          }
-        ]
-      },
-      {
-        "name": "Libras 1",
-        "workload": 33,
-        "period": 3,
-        "id": 4,
-        "unlock": [],
-        "prerequisite": [
-          {
-            "period": 1,
-            "id": 6
-          }
-        ]
-      },
-      {
-        "name": "Metodologia do Trabalho Científico",
-        "workload": 33,
-        "period": 3,
-        "id": 5,
-        "unlock": [
-          {
-            "period": 5,
-            "id": 4
-          }
-        ],
-        "prerequisite": []
-      }
-    ],
-    [
-      {
-        "name": "Introdução a Teoria dos Números",
-        "workload": 67,
-        "period": 4,
-        "id": 0,
-        "unlock": [
-          {
-            "period": 5,
-            "id": 0
-          }
-        ],
-        "prerequisite": [
-          {
-            "period": 2,
-            "id": 2
-          }
-        ]
-      },
-      {
-        "name": "Desenho Geométrico",
-        "workload": 33,
-        "period": 4,
-        "id": 1,
-        "unlock": [
-          {
-            "period": 5,
-            "id": 1
-          }
-        ],
-        "prerequisite": [
-          {
-            "period": 0,
-            "id": 1
-          }
-        ]
-      },
-      {
-        "name": "Física Básica '1",
-        "workload": 67,
-        "period": 4,
-        "id": 2,
-        "unlock": [],
-        "prerequisite": [
-          {
-            "period": 2,
-            "id": 1
-          }
-        ]
-      },
-      {
-        "name": "Prática de Ensino de Matemática 1",
-        "workload": 67,
-        "period": 4,
-        "id": 3,
-        "unlock": [
-          {
-            "period": 5,
-            "id": 3
-          }
-        ],
-        "prerequisite": [
-          {
-            "period": 3,
-            "id": 3
-          }
-        ]
-      },
-      {
-        "name": "Introdução à Programação",
-        "workload": 67,
-        "period": 4,
-        "id": 4,
-        "unlock": [],
-        "prerequisite": [
-          {
-            "period": 3,
-            "id": 3
-          }
-        ]
-      },
-      {
-        "name": "Gestão Educacional e Planejamento",
-        "workload": 33,
-        "period": 4,
-        "id": 5,
-        "unlock": [],
-        "prerequisite": []
-      },
-      {
-        "name": "Estágio Supervisionado 1",
+        "name": "Estágio Supervisionado II",
         "workload": 100,
-        "period": 4,
+        "period": 5,
         "id": 6,
         "unlock": [
           {
-            "period": 5,
-            "id": 6
+            "period": 6,
+            "id": 5
           }
         ],
         "prerequisite": [
           {
-            "period": 3,
-            "id": 3
+            "period": 2,
+            "id": 0
+          },
+          {
+            "period": 4,
+            "id": 6
           }
         ]
       }
     ],
     [
       {
-        "name": "Estruturas Algébricas 1",
+        "name": "Mecânica Quântica",
         "workload": 67,
-        "period": 5,
+        "period": 6,
         "id": 0,
-        "unlock": [],
-        "prerequisite": [
-          {
-            "period": 4,
-            "id": 0
-          }
-        ]
-      },
-      {
-        "name": "Geometria Euclidiana Plana",
-        "workload": 67,
-        "period": 5,
-        "id": 1,
         "unlock": [
           {
             "period": 7,
-            "id": 0
+            "id": 3
           }
         ],
         "prerequisite": [
           {
-            "period": 4,
-            "id": 1
+            "period": 5,
+            "id": 0
           }
         ]
       },
       {
-        "name": "Estatística e Probabilidade",
+        "name": "Eletromagnetismo",
         "workload": 67,
-        "period": 5,
-        "id": 2,
+        "period": 6,
+        "id": 1,
         "unlock": [],
         "prerequisite": [
           {
-            "period": 2,
-            "id": 1
-          }
-        ]
-      },
-      {
-        "name": "Prática de Ensino de Matemática 2",
-        "workload": 67,
-        "period": 5,
-        "id": 3,
-        "unlock": [
-          {
-            "period": 6,
-            "id": 3
-          }
-        ],
-        "prerequisite": [
-          {
-            "period": 4,
-            "id": 3
-          }
-        ]
-      },
-      {
-        "name": "Pesquisa Aplicada em Matemática 1",
-        "workload": 33,
-        "period": 5,
-        "id": 4,
-        "unlock": [
-          {
-            "period": 6,
-            "id": 4
-          }
-        ],
-        "prerequisite": [
+            "period": 3,
+            "id": 0
+          },
           {
             "period": 3,
+            "id": 4
+          }
+        ]
+      },
+      {
+        "name": "Prática de Ensino III",
+        "workload": 67,
+        "period": 6,
+        "id": 2,
+        "unlock": [
+          {
+            "period": 7,
+            "id": 2
+          }
+        ],
+        "prerequisite": [
+          {
+            "period": 5,
             "id": 5
           }
         ]
       },
       {
-        "name": "Educação em Direitos Humanos",
-        "workload": 33,
-        "period": 5,
-        "id": 5,
-        "unlock": [],
-        "prerequisite": []
-      },
-      {
-        "name": "Estágio Supervisionado 2",
-        "workload": 100,
-        "period": 5,
-        "id": 6,
-        "unlock": [
-          {
-            "period": 6,
-            "id": 6
-          }
-        ],
-        "prerequisite": [
-          {
-            "period": 4,
-            "id": 6
-          }
-        ]
-      }
-    ],
-    [
-      {
-        "name": "Análise Real 1",
-        "workload": 67,
-        "period": 6,
-        "id": 0,
-        "unlock": [],
-        "prerequisite": [
-          {
-            "period": 3,
-            "id": 1
-          }
-        ]
-      },
-      {
-        "name": "Matemática Financeira 1",
-        "workload": 33,
-        "period": 6,
-        "id": 1,
-        "unlock": [],
-        "prerequisite": [
-          {
-            "period": 1,
-            "id": 1
-          }
-        ]
-      },
-      {
-        "name": "Equações Diferenciais Ordinárias",
-        "workload": 67,
-        "period": 6,
-        "id": 2,
-        "unlock": [],
-        "prerequisite": [
-          {
-            "period": 3,
-            "id": 0
-          },
-          {
-            "period": 3,
-            "id": 1
-          }
-        ]
-      },
-      {
-        "name": "Prática de Ensino de Matemática 3",
+        "name": "Prática de Lab. e Inst. para o Ens. de Fís. I",
         "workload": 67,
         "period": 6,
         "id": 3,
         "unlock": [
           {
             "period": 7,
-            "id": 3
-          }
-        ],
-        "prerequisite": [
-          {
-            "period": 5,
-            "id": 3
-          }
-        ]
-      },
-      {
-        "name": "Pesquisa Aplicada em Matemática 2",
-        "workload": 33,
-        "period": 6,
-        "id": 4,
-        "unlock": [
-          {
-            "period": 7,
             "id": 1
           }
         ],
         "prerequisite": [
           {
-            "period": 5,
-            "id": 4
+            "period": 2,
+            "id": 0
+          },
+          {
+            "period": 3,
+            "id": 2
           }
         ]
       },
       {
-        "name": "Optativa 1",
+        "name": "Optativa I",
         "workload": 67,
         "period": 6,
-        "id": 5,
+        "id": 4,
         "unlock": [],
         "prerequisite": []
       },
       {
-        "name": "Estágio Supervisionado 3",
+        "name": "Estágio Supervisionado III",
         "workload": 100,
         "period": 6,
-        "id": 6,
+        "id": 5,
         "unlock": [
           {
             "period": 7,
@@ -743,67 +837,80 @@
     ],
     [
       {
-        "name": "Geometria Euclidiana Espacial",
-        "workload": 67,
+        "name": "Libras",
+        "workload": 33,
         "period": 7,
         "id": 0,
         "unlock": [],
         "prerequisite": [
           {
             "period": 5,
-            "id": 1
+            "id": 4
+          }
+        ]
+      },
+      {
+        "name": "Prática de Lab. e Inst. para o Ens. de Fís. II",
+        "workload": 67,
+        "period": 7,
+        "id": 1,
+        "unlock": [],
+        "prerequisite": [
+          {
+            "period": 6,
+            "id": 3
+          }
+        ]
+      },
+      {
+        "name": "Prática de Ensino IV",
+        "workload": 67,
+        "period": 7,
+        "id": 2,
+        "unlock": [],
+        "prerequisite": [
+          {
+            "period": 6,
+            "id": 2
+          }
+        ]
+      },
+      {
+        "name": "Mecânica Estatística",
+        "workload": 67,
+        "period": 7,
+        "id": 3,
+        "unlock": [],
+        "prerequisite": [
+          {
+            "period": 4,
+            "id": 3
+          },
+          {
+            "period": 6,
+            "id": 0
           }
         ]
       },
       {
         "name": "TCC",
-        "workload": 33,
+        "workload": 100,
         "period": 7,
-        "id": 1,
+        "id": 4,
         "unlock": [],
         "prerequisite": [
           {
-            "period": 6,
+            "period": 0,
+            "id": 5
+          },
+          {
+            "period": 1,
             "id": 4
           }
         ]
       },
       {
-        "name": "História da Matemática",
-        "workload": 67,
-        "period": 7,
-        "id": 2,
-        "unlock": [],
-        "prerequisite": [
-          {
-            "period": 2,
-            "id": 1
-          }
-        ]
-      },
-      {
-        "name": "Prática de Ensino de Matemática 4",
-        "workload": 67,
-        "period": 7,
-        "id": 3,
-        "unlock": [],
-        "prerequisite": [
-          {
-            "period": 6,
-            "id": 3
-          }
-        ]
-      },
-      {
-        "name": "Educação Ambiental e Sustentabilidade",
-        "workload": 33,
-        "period": 7,
-        "id": 4,
-        "unlock": [],
-        "prerequisite": []
-      },
-      {
-        "name": "Optativa 2",
+        "name": "Optativa II",
         "workload": 67,
         "period": 7,
         "id": 5,
@@ -811,15 +918,19 @@
         "prerequisite": []
       },
       {
-        "name": "Estágio Supervisionado 4",
+        "name": "Estágio Supervisionado IV",
         "workload": 100,
         "period": 7,
         "id": 6,
         "unlock": [],
         "prerequisite": [
           {
+            "period": 4,
+            "id": 0
+          },
+          {
             "period": 6,
-            "id": 6
+            "id": 5
           }
         ]
       }
