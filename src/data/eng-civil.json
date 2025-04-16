@@ -135,7 +135,7 @@
     [
       {
         "name": "Cálculo Diferencial e Integral I",
-        "workload": 100,
+        "workload": 67,
         "period": 0,
         "id": 0,
         "unlock": [
@@ -145,15 +145,11 @@
           },
           {
             "period": 1,
-            "id": 2
-          },
-          {
-            "period": 3,
             "id": 1
           },
           {
-            "period": 3,
-            "id": 4
+            "period": 1,
+            "id": 2
           }
         ],
         "prerequisite": []
@@ -166,65 +162,61 @@
         "unlock": [
           {
             "period": 1,
+            "id": 1
+          },
+          {
+            "period": 1,
             "id": 2
           },
           {
-            "period": 1,
-            "id": 1
+            "period": 5,
+            "id": 6
           }
         ],
         "prerequisite": []
       },
       {
-        "name": "Química Geral",
-        "workload": 67,
-        "period": 0,
-        "id": 2,
-        "unlock": [
-          {
-            "period": 1,
-            "id": 4
-          },
-          {
-            "period": 4,
-            "id": 4
-          }
-        ],
-        "prerequisite": []
-      },
-      {
-        "name": "Leitura e Produção Textual",
+        "name": "Sociologia",
         "workload": 50,
         "period": 0,
-        "id": 3,
-        "unlock": [
-          {
-            "period": 4,
-            "id": 2
-          }
-        ],
-        "prerequisite": []
-      },
-      {
-        "name": "Ética e Direitos Humanos",
-        "workload": 33,
-        "period": 0,
-        "id": 4,
+        "id": 2,
         "unlock": [],
         "prerequisite": []
       },
       {
-        "name": "Expressão Gráfica para Engenharia Civil",
+        "name": "Português Instrumental",
+        "workload": 33,
+        "period": 0,
+        "id": 3,
+        "unlock": [
+          {
+            "period": 3,
+            "id": 6
+          }
+        ],
+        "prerequisite": []
+      },
+      {
+        "name": "Desenho Técnico",
+        "workload": 50,
+        "period": 0,
+        "id": 4,
+        "unlock": [
+          {
+            "period": 1,
+            "id": 4
+          }
+        ],
+        "prerequisite": []
+      },
+      {
+        "name": "Qu[imica Geral",
         "workload": 50,
         "period": 0,
         "id": 5,
         "unlock": [
           {
-            "period": 2,
-            "id": 6
-          },
-          {
-            "period": 3,
+            "period": 1,
             "id": 5
           }
         ],
@@ -236,6 +228,23 @@
         "period": 0,
         "id": 6,
         "unlock": [],
+        "prerequisite": []
+      },
+      {
+        "name": "Informática Aplicada à Engenharia Civil",
+        "workload": 67,
+        "period": 0,
+        "id": 7,
+        "unlock": [
+          {
+            "period": 1,
+            "id": 4
+          },
+          {
+            "period": 3,
+            "id": 1
+          }
+        ],
         "prerequisite": []
       }
     ],

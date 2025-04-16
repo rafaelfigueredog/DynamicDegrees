@@ -12,8 +12,7 @@ import OptativeModal from '../components/Optative';
 import useStyles from './styles';
 import '../index.css';
 
-export default function Grid({ id, course, updateProgress, progress }) {
-    console.log(course);
+export default function Grid({ id, course, updateProgress }) {
     const classes = useStyles();
     const references = useRef(new Map());
     const { components, semesters } = course; // Incluindo optatives do curso
