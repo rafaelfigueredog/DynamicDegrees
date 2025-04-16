@@ -210,7 +210,7 @@
         "prerequisite": []
       },
       {
-        "name": "Qu[imica Geral",
+        "name": "Química Geral",
         "workload": 50,
         "period": 0,
         "id": 5,
@@ -265,23 +265,7 @@
           },
           {
             "period": 3,
-            "id": 0
-          },
-          {
-            "period": 3,
-            "id": 2
-          },
-          {
-            "period": 3,
             "id": 3
-          },
-          {
-            "period": 4,
-            "id": 0
-          },
-          {
-            "period": 4,
-            "id": 6
           }
         ],
         "prerequisite": [
@@ -299,37 +283,7 @@
         "unlock": [
           {
             "period": 3,
-            "id": 4
-          }
-        ],
-        "prerequisite": [
-          {
-            "period": 0,
             "id": 1
-          }
-        ]
-      },
-      {
-        "name": "Física Geral I",
-        "workload": 33,
-        "period": 1,
-        "id": 2,
-        "unlock": [
-          {
-            "period": 2,
-            "id": 2
-          },
-          {
-            "period": 2,
-            "id": 3
-          },
-          {
-            "period": 3,
-            "id": 1
-          },
-          {
-            "period": 3,
-            "id": 2
           }
         ],
         "prerequisite": [
@@ -344,53 +298,105 @@
         ]
       },
       {
-        "name": "Psicologia do Trabalho",
-        "workload": 50,
+        "name": "Física Geral I",
+        "workload": 83,
+        "period": 1,
+        "id": 2,
+        "unlock": [
+          {
+            "period": 2,
+            "id": 2
+          },
+          {
+            "period": 2,
+            "id": 3
+          }
+        ],
+        "prerequisite": [
+          {
+            "period": 0,
+            "id": 0
+          },
+          {
+            "period": 0,
+            "id": 1
+          }
+        ]
+      },
+      {
+        "name": "Ciências do Ambiente",
+        "workload": 33,
         "period": 1,
         "id": 3,
-        "unlock": [],
+        "unlock": [
+          {
+            "period": 7,
+            "id": 4
+          }
+        ],
         "prerequisite": []
       },
       {
-        "name": "Materiais de Construção Civil I",
-        "workload": 67,
+        "name": "Desenho e Projeto de Arquitetura",
+        "workload": 83,
         "period": 1,
         "id": 4,
         "unlock": [
           {
             "period": 2,
             "id": 4
+          },
+          {
+            "period": 4,
+            "id": 5
+          },
+          {
+            "period": 5,
+            "id": 5
           }
         ],
         "prerequisite": [
           {
             "period": 0,
-            "id": 2
+            "id": 4
+          },
+          {
+            "period": 0,
+            "id": 7
           }
         ]
       },
       {
-        "name": "Fundamentos da Arquitetura e Urbanismo",
+        "name": "Geologia",
         "workload": 50,
         "period": 1,
         "id": 5,
         "unlock": [
           {
-            "period": 3,
+            "period": 2,
             "id": 5
+          },
+          {
+            "period": 4,
+            "id": 2
           }
         ],
-        "prerequisite": []
+        "prerequisite": [
+          {
+            "period": 0,
+            "id": 5
+          }
+        ]
       },
       {
-        "name": "Práticas Curriculares de Extensão",
-        "workload": 33,
+        "name": "Práticas Curriculares de Extensão I",
+        "workload": 100,
         "period": 1,
         "id": 6,
         "unlock": [
           {
-            "period": 6,
-            "id": 2
+            "period": 4,
+            "id": 6
           }
         ],
         "prerequisite": []
@@ -402,7 +408,16 @@
         "workload": 67,
         "period": 2,
         "id": 0,
-        "unlock": [],
+        "unlock": [
+          {
+            "period": 3,
+            "id": 1
+          },
+          {
+            "period": 3,
+            "id": 0
+          }
+        ],
         "prerequisite": [
           {
             "period": 1,
@@ -417,8 +432,8 @@
         "id": 1,
         "unlock": [
           {
-            "period": 3,
-            "id": 3
+            "period": 5,
+            "id": 4
           }
         ],
         "prerequisite": [
@@ -430,13 +445,17 @@
       },
       {
         "name": "Física Geral II",
-        "workload": 67,
+        "workload": 83,
         "period": 2,
         "id": 2,
         "unlock": [
           {
-            "period": 2,
-            "id": 3
+            "period": 3,
+            "id": 2
+          },
+          {
+            "period": 3,
+            "id": 4
           }
         ],
         "prerequisite": [
@@ -447,80 +466,89 @@
         ]
       },
       {
-        "name": "Física Experimental",
-        "workload": 33,
+        "name": "Mecânica geral",
+        "workload": 83,
         "period": 2,
         "id": 3,
         "unlock": [
           {
-            "period": 5,
-            "id": 4
-          }
-        ],
-        "prerequisite": [
-          {
-            "period": 1,
-            "id": 2
-          },
-          {
-            "period": 2,
-            "id": 2
-          }
-        ]
-      },
-      {
-        "name": "Materiais de Construção Civil II",
-        "workload": 100,
-        "period": 2,
-        "id": 4,
-        "unlock": [
-          {
-            "period": 8,
+            "period": 3,
             "id": 3
           }
         ],
         "prerequisite": [
           {
             "period": 1,
+            "id": 2
+          }
+        ]
+      },
+      {
+        "name": "Topografia",
+        "workload": 83,
+        "period": 2,
+        "id": 4,
+        "unlock": [
+          {
+            "period": 4,
+            "id": 1
+          },
+          {
+            "period": 5,
+            "id": 0
+          },
+          {
+            "period": 6,
+            "id": 5
+          }
+        ],
+        "prerequisite": [
+          {
+            "period": 1,
             "id": 4
           }
         ]
       },
       {
-        "name": "Gestão de Projetos BIM",
-        "workload": 33,
+        "name": "Materiais de Construção I",
+        "workload": 67,
         "period": 2,
         "id": 5,
         "unlock": [
           {
-            "period": 4,
+            "period": 3,
             "id": 5
           }
         ],
-        "prerequisite": []
-      },
-      {
-        "name": "Topografia",
-        "workload": 67,
-        "period": 2,
-        "id": 6,
-        "unlock": [],
         "prerequisite": [
           {
-            "period": 0,
-            "id": 0
-          },
-          {
-            "period": 0,
+            "period": 1,
             "id": 5
           }
         ]
+      },
+      {
+        "name": "Relações Humanas no Trabalho",
+        "workload": 33,
+        "period": 2,
+        "id": 6,
+        "unlock": [
+          {
+            "period": 4,
+            "id": 0
+          },
+          {
+            "period": 7,
+            "id": 6
+          }
+        ],
+        "prerequisite": []
       }
     ],
     [
       {
-        "name": "Séries e Equações Diferenciais Ordinárias",
-        "workload": 67,
+        "name": "Equações Diferenciais Ordinárias",
+        "workload": 50,
         "period": 3,
         "id": 0,
         "unlock": [
@@ -529,44 +557,60 @@
             "id": 0
           }
         ],
-        "prerequisite": [
-          {
-            "period": 1,
-            "id": 0
-          }
-        ]
+        "prerequisite": []
       },
       {
-        "name": "Mecânica Geral",
-        "workload": 83,
+        "name": "Cálculo Númerico",
+        "workload": 33,
         "period": 3,
         "id": 1,
-        "unlock": [
-          {
-            "period": 4,
-            "id": 0
-          }
-        ],
+        "unlock": [],
         "prerequisite": [
           {
             "period": 0,
-            "id": 0
+            "id": 7
           },
           {
             "period": 1,
-            "id": 2
+            "id": 1
+          },
+          {
+            "period": 2,
+            "id": 0
           }
         ]
       },
       {
         "name": "Física Geral III",
-        "workload": 67,
+        "workload": 83,
         "period": 3,
         "id": 2,
         "unlock": [
           {
             "period": 4,
-            "id": 1
+            "id": 5
+          }
+        ],
+        "prerequisite": [
+          {
+            "period": 2,
+            "id": 2
+          }
+        ]
+      },
+      {
+        "name": "Resistência dos Materiais I",
+        "workload": 67,
+        "period": 3,
+        "id": 3,
+        "unlock": [
+          {
+            "period": 4,
+            "id": 2
+          },
+          {
+            "period": 4,
+            "id": 3
           }
         ],
         "prerequisite": [
@@ -575,8 +619,8 @@
             "id": 0
           },
           {
-            "period": 1,
-            "id": 2
+            "period": 2,
+            "id": 3
           }
         ]
       },
@@ -584,195 +628,89 @@
         "name": "Mecânica dos Fluidos",
         "workload": 67,
         "period": 3,
-        "id": 3,
+        "id": 4,
         "unlock": [
           {
             "period": 4,
-            "id": 3
-          },
-          {
-            "period": 5,
-            "id": 2
+            "id": 4
           }
         ],
         "prerequisite": [
           {
-            "period": 1,
-            "id": 0
-          },
-          {
             "period": 2,
-            "id": 1
+            "id": 2
           }
         ]
       },
       {
-        "name": "Introdução à Programação",
+        "name": "Materiais de Construção II",
         "workload": 67,
-        "period": 3,
-        "id": 4,
-        "unlock": [],
-        "prerequisite": [
-          {
-            "period": 0,
-            "id": 0
-          },
-          {
-            "period": 1,
-            "id": 1
-          }
-        ]
-      },
-      {
-        "name": "Representação Gráfica de Projetos com BIM",
-        "workload": 50,
         "period": 3,
         "id": 5,
         "unlock": [
           {
             "period": 4,
-            "id": 5
+            "id": 1
           },
           {
-            "period": 8,
-            "id": 3
+            "period": 5,
+            "id": 0
           }
         ],
         "prerequisite": [
           {
-            "period": 0,
-            "id": 5
-          },
-          {
-            "period": 1,
+            "period": 2,
             "id": 5
           }
         ]
       },
       {
-        "name": "Geologia Aplicada à Engenharia Civil",
+        "name": "Metodologia da Pesquisa Científica",
         "workload": 50,
         "period": 3,
         "id": 6,
-        "unlock": [
-          {
-            "period": 4,
-            "id": 6
-          }
-        ],
+        "unlock": [],
         "prerequisite": [
           {
             "period": 0,
-            "id": 2
+            "id": 3
           }
         ]
       }
     ],
     [
       {
-        "name": "Resistência dos Materiais I",
-        "workload": 67,
+        "name": "Administração e Empreendedorismo",
+        "workload": 50,
         "period": 4,
         "id": 0,
-        "unlock": [
-          {
-            "period": 5,
-            "id": 0
-          }
-        ],
+        "unlock": [],
         "prerequisite": [
           {
-            "period": 1,
-            "id": 0
-          },
-          {
-            "period": 3,
-            "id": 1
+            "period": 2,
+            "id": 6
           }
         ]
       },
       {
-        "name": "Eletrotécnica",
-        "workload": 50,
+        "name": "Tecnologia das Construções I",
+        "workload": 67,
         "period": 4,
         "id": 1,
         "unlock": [
           {
             "period": 5,
             "id": 1
-          }
-        ],
-        "prerequisite": [
-          {
-            "period": 3,
-            "id": 2
-          }
-        ]
-      },
-      {
-        "name": "Fundamentos da Metodologia Científica",
-        "workload": 33,
-        "period": 4,
-        "id": 2,
-        "unlock": [
-          {
-            "period": 8,
-            "id": 5
-          }
-        ],
-        "prerequisite": [
-          {
-            "period": 0,
-            "id": 3
-          }
-        ]
-      },
-      {
-        "name": "Hidráulica",
-        "workload": 67,
-        "period": 4,
-        "id": 3,
-        "unlock": [
+          },
           {
             "period": 5,
-            "id": 3
-          }
-        ],
-        "prerequisite": [
-          {
-            "period": 3,
-            "id": 3
-          }
-        ]
-      },
-      {
-        "name": "Ciências do Ambiente",
-        "workload": 50,
-        "period": 4,
-        "id": 4,
-        "unlock": [],
-        "prerequisite": [
-          {
-            "period": 0,
-            "id": 2
-          }
-        ]
-      },
-      {
-        "name": "Modelagem da Informação da Construção",
-        "workload": 50,
-        "period": 4,
-        "id": 5,
-        "unlock": [
-          {
-            "period": 8,
-            "id": 6
+            "id": 7
           }
         ],
         "prerequisite": [
           {
             "period": 2,
-            "id": 5
+            "id": 4
           },
           {
             "period": 3,
@@ -784,7 +722,55 @@
         "name": "Mecânica dos Solos I",
         "workload": 67,
         "period": 4,
-        "id": 6,
+        "id": 2,
+        "unlock": [
+          {
+            "period": 5,
+            "id": 2
+          },
+          {
+            "period": 7,
+            "id": 0
+          }
+        ],
+        "prerequisite": [
+          {
+            "period": 1,
+            "id": 5
+          },
+          {
+            "period": 3,
+            "id": 3
+          }
+        ]
+      },
+      {
+        "name": "Resistência dos Materiais II",
+        "workload": 67,
+        "period": 4,
+        "id": 3,
+        "unlock": [
+          {
+            "period": 5,
+            "id": 3
+          },
+          {
+            "period": 6,
+            "id": 1
+          }
+        ],
+        "prerequisite": [
+          {
+            "period": 3,
+            "id": 3
+          }
+        ]
+      },
+      {
+        "name": "Hidráulica",
+        "workload": 67,
+        "period": 4,
+        "id": 4,
         "unlock": [
           {
             "period": 5,
@@ -797,11 +783,47 @@
         ],
         "prerequisite": [
           {
+            "period": 3,
+            "id": 4
+          }
+        ]
+      },
+      {
+        "name": "Eletrotécnica Aplicada",
+        "workload": 67,
+        "period": 4,
+        "id": 5,
+        "unlock": [
+          {
+            "period": 7,
+            "id": 5
+          }
+        ],
+        "prerequisite": [
+          {
             "period": 1,
-            "id": 0
+            "id": 4
           },
           {
             "period": 3,
+            "id": 2
+          }
+        ]
+      },
+      {
+        "name": "Práticas Curriculares de Extensão II",
+        "workload": 100,
+        "period": 4,
+        "id": 6,
+        "unlock": [
+          {
+            "period": 6,
+            "id": 6
+          }
+        ],
+        "prerequisite": [
+          {
+            "period": 1,
             "id": 6
           }
         ]
@@ -809,17 +831,39 @@
     ],
     [
       {
-        "name": "Resistência dos Materiais II",
-        "workload": 67,
+        "name": "Estradas de Rodagem I",
+        "workload": 50,
         "period": 5,
         "id": 0,
         "unlock": [
           {
             "period": 6,
             "id": 0
+          }
+        ],
+        "prerequisite": [
+          {
+            "period": 2,
+            "id": 4
           },
           {
+            "period": 3,
+            "id": 5
+          }
+        ]
+      },
+      {
+        "name": "Tecnologia das Construções II",
+        "workload": 67,
+        "period": 5,
+        "id": 1,
+        "unlock": [
+          {
             "period": 6,
+            "id": 5
+          },
+          {
+            "period": 7,
             "id": 1
           },
           {
@@ -829,76 +873,38 @@
         ],
         "prerequisite": [
           {
-            "period": 3,
-            "id": 0
-          },
-          {
-            "period": 4,
-            "id": 0
-          }
-        ]
-      },
-      {
-        "name": "Instalações Elétricas Prediais",
-        "workload": 67,
-        "period": 5,
-        "id": 1,
-        "unlock": [
-          {
-            "period": 8,
-            "id": 2
-          },
-          {
-            "period": 8,
-            "id": 3
-          },
-          {
-            "period": 8,
-            "id": 6
-          }
-        ],
-        "prerequisite": [
-          {
             "period": 4,
             "id": 1
           }
         ]
       },
       {
-        "name": "Hidrologia",
+        "name": "Mecânica dos Solos II",
         "workload": 67,
         "period": 5,
         "id": 2,
         "unlock": [
           {
             "period": 6,
-            "id": 3
+            "id": 2
           }
         ],
         "prerequisite": [
           {
-            "period": 3,
-            "id": 3
+            "period": 4,
+            "id": 2
           }
         ]
       },
       {
-        "name": "Instalações Prediais Hidrossanitárias, Gás e Incêndio",
+        "name": "Teoria das Estruturas I",
         "workload": 67,
         "period": 5,
         "id": 3,
         "unlock": [
           {
-            "period": 8,
-            "id": 2
-          },
-          {
-            "period": 8,
+            "period": 6,
             "id": 3
-          },
-          {
-            "period": 8,
-            "id": 6
           }
         ],
         "prerequisite": [
@@ -909,475 +915,437 @@
         ]
       },
       {
-        "name": "Estradas I",
-        "workload": 67,
+        "name": "Hidrologia",
+        "workload": 50,
         "period": 5,
         "id": 4,
         "unlock": [
           {
             "period": 6,
-            "id": 5
+            "id": 4
+          },
+          {
+            "period": 7,
+            "id": 4
           }
         ],
         "prerequisite": [
           {
             "period": 2,
-            "id": 3
+            "id": 1
           },
           {
             "period": 4,
-            "id": 6
+            "id": 4
           }
         ]
       },
       {
-        "name": "Mecânica dos Solos II",
-        "workload": 50,
+        "name": "Instalações Hidrossanitárias",
+        "workload": 67,
         "period": 5,
         "id": 5,
         "unlock": [
           {
-            "period": 7,
-            "id": 3
+            "period":7,
+            "id": 5
           }
         ],
         "prerequisite": [
           {
+            "period": 1,
+            "id": 4
+          },
+          {
             "period": 4,
-            "id": 6
+            "id": 4
           }
         ]
       },
       {
-        "name": "Legislação Aplicada à Engenharia Civil",
+        "name": "Engenharia Econômica",
         "workload": 33,
         "period": 5,
         "id": 6,
         "unlock": [],
-        "prerequisite": []
+        "prerequisite": [
+          {
+            "period": 0,
+            "id": 1
+          }
+        ]
+      },
+      {
+        "name": "Segurança do Trabalho",
+        "workload": 50,
+        "period": 5,
+        "id": 7,
+        "unlock": [],
+        "prerequisite": [
+          {
+            "period": 4,
+            "id": 1
+          }
+        ]
       }
     ],
     [
       {
-        "name": "Teoria das Estruturas I",
-        "workload": 67,
+        "name": "Estradas de Rodagem II",
+        "workload": 50,
         "period": 6,
         "id": 0,
         "unlock": [
           {
             "period": 7,
             "id": 0
-          },
-          {
-            "period": 7,
-            "id": 1
           }
         ],
         "prerequisite": [
           {
             "period": 5,
             "id": 0
+          }
+        ]
+      },
+      {
+        "name": "Estruturas de Aço e Madeira",
+        "workload": 67,
+        "period": 6,
+        "id": 1,
+        "unlock": [
+          {
+            "period": 7,
+            "id": 5
+          }
+        ],
+        "prerequisite": [
+          {
+            "period": 4,
+            "id": 3
+          }
+        ]
+      },
+      {
+        "name": "Fundações e Sistemas de Contenção",
+        "workload": 67,
+        "period": 6,
+        "id": 2,
+        "unlock": [
+          {
+            "period": 7,
+            "id": 2
+          }
+        ],
+        "prerequisite": [
+          {
+            "period": 5,
+            "id": 2
+          }
+        ]
+      },
+      {
+        "name": "Teoria das Estruturas II",
+        "workload": 67,
+        "period": 6,
+        "id": 3,
+        "unlock": [
+          {
+            "period": 7,
+            "id": 3
+          }
+        ],
+        "prerequisite": [
+          {
+            "period": 5,
+            "id": 3
+          }
+        ]
+      },
+      {
+        "name": "Sistemas de Abastecimento de Água",
+        "workload": 50,
+        "period": 6,
+        "id": 4,
+        "unlock": [],
+        "prerequisite": [
+          {
+            "period": 5,
+            "id": 4
+          }
+        ]
+      },
+      {
+        "name": "Modelagem da Informação da Construção I (BIM I)",
+        "workload": 67,
+        "period": 6,
+        "id": 5,
+        "unlock": [
+          {
+            "period": 7,
+            "id": 5
+          }
+        ],
+        "prerequisite": [
+          {
+            "period": 2,
+            "id": 4
+          },
+          {
+            "period": 5,
+            "id": 1
+          }
+        ]
+      },
+      {
+        "name": "Práticas Curriculares de Extensão III",
+        "workload": 100,
+        "period": 6,
+        "id": 6,
+        "unlock": [
+          {
+            "period": 8,
+            "id": 5
+          }
+        ],
+        "prerequisite": [
+          {
+            "period": 4,
+            "id": 6
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "name": "Pavimentação",
+        "workload": 50,
+        "period": 7,
+        "id": 0,
+        "unlock": [],
+        "prerequisite": [
+          {
+            "period": 4,
+            "id": 2
+          },
+          {
+            "period": 6,
+            "id": 0
+          }
+        ]
+      },
+      {
+        "name": "Orçamento de Obras",
+        "workload": 67,
+        "period": 7,
+        "id": 1,
+        "unlock": [
+          {
+            "period": 8,
+            "id": 1
+          }
+        ],
+        "prerequisite": [
+          {
+            "period": 5,
+            "id": 1
+          }
+        ]
+      },
+      {
+        "name": "Patologia das Construções",
+        "workload": 50,
+        "period": 7,
+        "id": 2,
+        "unlock": [
+          {
+            "period": 8,
+            "id": 2
+          }
+        ],
+        "prerequisite": [
+          {
+            "period": 5,
+            "id": 1
+          },
+          {
+            "period": 6,
+            "id": 2
           }
         ]
       },
       {
         "name": "Estruturas de Concreto Armado I",
         "workload": 67,
-        "period": 6,
-        "id": 1,
-        "unlock": [
-          {
-            "period": 7,
-            "id": 1
-          },
-          {
-            "period": 7,
-            "id": 3
-          },
-          {
-            "period": 8,
-            "id": 6
-          }
-        ],
-        "prerequisite": [
-          {
-            "period": 5,
-            "id": 0
-          }
-        ]
-      },
-      {
-        "name": "Administração e Empreendedorismo",
-        "workload": 33,
-        "period": 6,
-        "id": 2,
-        "unlock": [],
-        "prerequisite": [
-          {
-            "period": 1,
-            "id": 6
-          }
-        ]
-      },
-      {
-        "name": "Sistemas de Abastecimento de Água",
-        "workload": 67,
-        "period": 6,
+        "period": 7,
         "id": 3,
         "unlock": [
           {
-            "period": 7,
-            "id": 4
+            "period": 8,
+            "id": 3
           }
         ],
         "prerequisite": [
           {
-            "period": 5,
-            "id": 2
+            "period": 4,
+            "id": 5
+          },
+          {
+            "period": 6,
+            "id": 3
           }
         ]
       },
       {
-        "name": "Segurança do Trabalho na Construção Civil",
-        "workload": 50,
-        "period": 6,
+        "name": "Sistemas de Esgoto e Drenagem",
+        "workload": 67,
+        "period": 7,
         "id": 4,
         "unlock": [],
-        "prerequisite": []
-      },
-      {
-        "name": "Estradas II",
-        "workload": 67,
-        "period": 6,
-        "id": 5,
-        "unlock": [
-          {
-            "period": 7,
-            "id": 5
-          }
-        ],
         "prerequisite": [
           {
             "period": 5,
             "id": 4
+          },
+          {
+            "period": 1,
+            "id": 3
+          }
+        ]
+      },
+      {
+        "name": "Modelagem da Informação da Construção II (BIM II)",
+        "workload": 67,
+        "period": 7,
+        "id": 5,
+        "unlock": [],
+        "prerequisite": [
+          {
+            "period": 4,
+            "id": 5
+          },
+          {
+            "period": 5,
+            "id": 5
+          },
+          {
+            "period": 6,
+            "id": 1
+          },
+          {
+            "period": 6,
+            "id": 5
+          }
+        ]
+      },
+      {
+        "name": "Legislação Aplicada à Engenharia",
+        "workload": 50,
+        "period": 7,
+        "id": 6,
+        "unlock": [],
+        "prerequisite": [
+          {
+            "period": 2,
+            "id": 6
           }
         ]
       }
     ],
     [
       {
-        "name": "Teoria das Estruturas II",
-        "workload": 67,
-        "period": 7,
+        "name": "Trabalho de Conclusão de Curso I",
+        "workload": 33,
+        "period": 8,
         "id": 0,
+        "unlock": [
+          {
+            "period": 9,
+            "id": 0
+          }
+        ],
+        "prerequisite": []
+      },
+      {
+        "name": "Planejamento e Gerenciamento de Obras",
+        "workload": 67,
+        "period": 8,
+        "id": 1,
         "unlock": [],
         "prerequisite": [
           {
-            "period": 6,
-            "id": 0
+            "period": 7,
+            "id": 1
+          }
+        ]
+      },
+      {
+        "name": "Manutenção Predial",
+        "workload": 33,
+        "period": 8,
+        "id": 2,
+        "unlock": [],
+        "prerequisite": [
+          {
+            "period": 7,
+            "id": 2
           }
         ]
       },
       {
         "name": "Estruturas de Concreto Armado II",
         "workload": 67,
-        "period": 7,
-        "id": 1,
-        "unlock": [
-          {
-            "period": 8,
-            "id": 0
-          },
-          {
-            "period": 8,
-            "id": 3
-          }
-        ],
-        "prerequisite": [
-          {
-            "period": 6,
-            "id": 0
-          },
-          {
-            "period": 6,
-            "id": 1
-          }
-        ]
-      },
-      {
-        "name": "Estruturas Metálicas e de Madeiras",
-        "workload": 67,
-        "period": 7,
-        "id": 2,
-        "unlock": [],
-        "prerequisite": [
-          {
-            "period": 5,
-            "id": 0
-          }
-        ]
-      },
-      {
-        "name": "Fundações e Estruturas de Contenção",
-        "workload": 67,
-        "period": 7,
-        "id": 3,
-        "unlock": [
-          {
-            "period": 8,
-            "id": 3
-          }
-        ],
-        "prerequisite": [
-          {
-            "period": 5,
-            "id": 5
-          },
-          {
-            "period": 6,
-            "id": 1
-          }
-        ]
-      },
-      {
-        "name": "Sistemas de Esgotos e Drenagem",
-        "workload": 67,
-        "period": 7,
-        "id": 4,
-        "unlock": [],
-        "prerequisite": [
-          {
-            "period": 6,
-            "id": 3
-          }
-        ]
-      },
-      {
-        "name": "Pavimentação",
-        "workload": 67,
-        "period": 7,
-        "id": 5,
-        "unlock": [],
-        "prerequisite": [
-          {
-            "period": 6,
-            "id": 5
-          }
-        ]
-      }
-    ],
-    [
-      {
-        "name": "Patologia das Construções",
-        "workload": 67,
-        "period": 8,
-        "id": 0,
-        "unlock": [],
-        "prerequisite": [
-          {
-            "period": 7,
-            "id": 1
-          },
-          {
-            "period": 8,
-            "id": 3
-          }
-        ]
-      },
-      {
-        "name": "Gerenciamento de Resíduos da Construção Civil",
-        "workload": 50,
-        "period": 8,
-        "id": 1,
-        "unlock": [],
-        "prerequisite": [
-          {
-            "period": 8,
-            "id": 3
-          }
-        ]
-      },
-      {
-        "name": "Orçamento de Obras",
-        "workload": 50,
-        "period": 8,
-        "id": 2,
-        "unlock": [
-          {
-            "period": 9,
-            "id": 1
-          }
-        ],
-        "prerequisite": [
-          {
-            "period": 5,
-            "id": 1
-          },
-          {
-            "period": 5,
-            "id": 3
-          },
-          {
-            "period": 8,
-            "id": 3
-          }
-        ]
-      },
-      {
-        "name": "Técnicas Construtivas",
-        "workload": 100,
         "period": 8,
         "id": 3,
-        "unlock": [
-          {
-            "period": 8,
-            "id": 0
-          },
-          {
-            "period": 8,
-            "id": 1
-          },
-          {
-            "period": 8,
-            "id": 2
-          },
-          {
-            "period": 8,
-            "id": 4
-          }
-        ],
+        "unlock": [],
         "prerequisite": [
-          {
-            "period": 2,
-            "id": 4
-          },
-          {
-            "period": 3,
-            "id": 5
-          },
-          {
-            "period": 5,
-            "id": 1
-          },
-          {
-            "period": 5,
-            "id": 3
-          },
-          {
-            "period": 7,
-            "id": 1
-          },
           {
             "period": 7,
             "id": 3
-          }
-        ]
-      },
-      {
-        "name": "Qualidade na Construção Civil",
-        "workload": 50,
-        "period": 8,
-        "id": 4,
-        "unlock": [],
-        "prerequisite": [
-          {
-            "period": 8,
-            "id": 3
-          }
-        ]
-      },
-      {
-        "name": "Projeto de Conclusão de Curso",
-        "workload": 33,
-        "period": 8,
-        "id": 5,
-        "unlock": [
-          {
-            "period": 9,
-            "id": 0
-          }
-        ],
-        "prerequisite": [
-          {
-            "period": 4,
-            "id": 2
-          }
-        ]
-      },
-      {
-        "name": "Projeto Integrador",
-        "workload": 50,
-        "period": 8,
-        "id": 6,
-        "unlock": [],
-        "prerequisite": [
-          {
-            "period": 4,
-            "id": 5
-          },
-          {
-            "period": 5,
-            "id": 1
-          },
-          {
-            "period": 5,
-            "id": 3
-          },
-          {
-            "period": 6,
-            "id": 1
-          }
-        ]
-      }
-    ],
-    [
-      {
-        "name": "Trabalho de Conclusão de Curso",
-        "workload": 33,
-        "period": 9,
-        "id": 0,
-        "unlock": [],
-        "prerequisite": [
-          {
-            "period": 8,
-            "id": 5
-          }
-        ]
-      },
-      {
-        "name": "Planejamento e Gerenciamento de Obras",
-        "workload": 67,
-        "period": 9,
-        "id": 1,
-        "unlock": [],
-        "prerequisite": [
-          {
-            "period": 8,
-            "id": 2
           }
         ]
       },
       {
         "name": "Optativa I",
         "workload": 67,
-        "period": 9,
-        "id": 2,
+        "period": 8,
+        "id": 4,
         "unlock": [],
         "prerequisite": []
+      },
+      {
+        "name": "Práticas Curriculares de Extensão IV",
+        "workload": 100,
+        "period": 8,
+        "id": 5,
+        "unlock": [],
+        "prerequisite": [
+          {
+            "period": 6,
+            "id": 6
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "name": "Trabalho de Conclusão de Curso II",
+        "workload": 33,
+        "period": 9,
+        "id": 0,
+        "unlock": [],
+        "prerequisite": [
+          {
+            "period": 8,
+            "id": 0
+          }
+        ]
       },
       {
         "name": "Optativa II",
-        "workload": 50,
+        "workload": 67,
         "period": 9,
-        "id": 3,
-        "unlock": [],
-        "prerequisite": []
-      },
-      {
-        "name": "Optativa III",
-        "workload": 33,
-        "period": 9,
-        "id": 4,
+        "id": 1,
         "unlock": [],
         "prerequisite": []
       }

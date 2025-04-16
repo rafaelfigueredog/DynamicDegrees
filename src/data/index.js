@@ -29,7 +29,7 @@ const courses = {
         semesters: engcivil.semesters, 
         optatives: engcivil.optatives,
         components: engcivil.components, 
-        workTime: 3871
+        workTime: 4088
     },
     
 
