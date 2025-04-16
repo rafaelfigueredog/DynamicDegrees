@@ -7,16 +7,19 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Course from '../components/Course';
 import Stack from '../classes/Stack';
+import OptativeModal from '../components/Optative';
 
 import useStyles from './styles';
 import '../index.css';
 
 export default function Grid({ id, course, updateProgress, progress }) {
+    console.log(course);
     const classes = useStyles();
     const references = useRef(new Map());
-    const { components, semesters } = course;
+    const { components, semesters } = course; // Incluindo optatives do curso
     const [availableCourses, setAvailableCourses] = useState(recoverAvailable(id, components, semesters));
     const [succeedCourses, setSucceedCourses] = useState(recoverSucceed(id, components, semesters));
+    const [isOptativeModalOpen, setOptativeModalOpen] = useState(false);
 
     function updateLocalStorage() {
         localStorage.setItem(`succeed:${id}`, JSON.stringify(succeedCourses));
@@ -24,35 +27,34 @@ export default function Grid({ id, course, updateProgress, progress }) {
     }
 
     const resetProgress = () => {
-        // Limpa o localStorage para o ID específico
         localStorage.removeItem(`succeed:${id}`);
         localStorage.removeItem(`available:${id}`);
         localStorage.setItem(`progress:${id}`, 0);
 
-        // Atualiza os estados locais para desabilitar todas as cadeiras, exceto as que não possuem pré-requisitos
         const resetSucceed = components.map((semester) => semester.map(() => false));
         const resetAvailable = components.map((semester) =>
-            semester.map((course) => course.prerequisite.length === 0) // Liberar as cadeiras sem pré-requisitos
+            semester.map((course) => course.prerequisite.length === 0)
         );
 
         setSucceedCourses(resetSucceed);
         setAvailableCourses(resetAvailable);
 
-        // Atualiza os botões dinamicamente
         components.forEach((semester) => {
             semester.forEach((course) => {
                 const { name } = course;
                 const ref = references.current.get(name);
-                const isAvailable = course.prerequisite.length === 0; // Verifica se a cadeira não tem pré-requisitos
+                const isAvailable = course.prerequisite.length === 0;
                 if (ref && typeof ref.setState === 'function') {
-                    ref.setState(isAvailable, false); // Define apenas as cadeiras sem pré-requisitos como disponíveis
+                    ref.setState(isAvailable, false);
                 }
             });
         });
 
-        // Atualiza o progresso
         updateProgress(resetSucceed);
     };
+
+    const openOptativeModal = () => setOptativeModalOpen(true);
+    const closeOptativeModal = () => setOptativeModalOpen(false);
 
     const updateSucceedMap = (course, state) => {
         const updateSucceedMap = succeedCourses;
@@ -145,10 +147,29 @@ export default function Grid({ id, course, updateProgress, progress }) {
         <>
             {/* Botão de Resetar Progresso fora da grade */}
             <div className={classes.resetButtonContainer}>
-                <Button variant="contained" color="secondary" onClick={resetProgress}>
+                <Button
+                    className={classes.resetButton}
+                    variant="contained"
+                    color="secondary"
+                    onClick={resetProgress}
+                >
                     Resetar Progresso
                 </Button>
+                <Button
+                    variant="contained"
+                    color="secondary"
+                    onClick={openOptativeModal}
+                >
+                    Ver Optativas Possíveis
+                </Button>
             </div>
+
+            {/* Modal de Optativas */}
+            <OptativeModal
+                open={isOptativeModalOpen}
+                handleClose={closeOptativeModal}
+                optatives={course.optatives || []}
+            />
 
             {/* Grade Curricular */}
             <div className={classes.root}>

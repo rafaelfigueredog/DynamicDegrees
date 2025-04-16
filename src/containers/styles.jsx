@@ -15,8 +15,12 @@ export const useStyles = makeStyles((theme) => ({
         justifyContent: 'center',
         alignItems: 'center',
         marginBottom: theme.spacing(2), // Espaço abaixo do botão
-        marginTop: theme.spacing(0), // Espaço acima do botão
+        marginTop: theme.spacing(0),
         width: '100%', // Garante que o botão fique centralizado na largura total
+    },
+    
+    resetButton: {
+        marginRight: theme.spacing(3)
     },
 
     titleColumn: {

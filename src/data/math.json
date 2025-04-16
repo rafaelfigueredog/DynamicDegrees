@@ -1,6 +1,44 @@
 {
   "name": "Curso Superior de Licenciatura em Matemática",
   "semesters": 8,
+  "optatives": [
+    {
+      "name": "Filosofias da Matemática e Educação Matemática 1 ",
+      "workload": 67
+    },
+    {
+      "name": "Filosofias da Matemática e Educação Matemática 2",
+      "workload": 67
+    },
+    {
+      "name": "Teorias da Aprendizagem",
+      "workload": 67
+    },
+    {
+      "name": "Cálculo 4",
+      "workload": 67
+    },
+    {
+      "name": "Álgebra Linear 2",
+      "workload": 67
+    },
+    {
+      "name": "Introdução ao Cálculo Numérico e a Matemática Computacional",
+      "workload": 67
+    },
+    {
+      "name": "Estruturas Algébricas 2",
+      "workload": 67
+    },
+    {
+      "name": "Análise Real 2",
+      "workload": 67
+    },
+    {
+      "name": "Variáveis Complexas ",
+      "workload": 67
+    }
+  ],
   "components": [
     [
       {

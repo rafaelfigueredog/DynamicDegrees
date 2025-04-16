@@ -1,6 +1,36 @@
 {
   "name": "Curso Superior de Licenciatura em Física",
   "semesters": 8,
+  "optatives": [
+    {
+      "name": "Métodos Matemáticos Aplicados à Física II",
+      "workload": 67
+    },
+    {
+      "name": "Mecânica Quântica II",
+      "workload": 67
+    },
+    {
+      "name": "Eletromagnetismo II ",
+      "workload": 67
+    },
+    {
+      "name": "Variáveis Complexas",
+      "workload": 67
+    },
+    {
+      "name": "Fundamentos da Astronomia e Astrofísica I",
+      "workload": 67
+    },
+    {
+      "name": "Fundamentos da Astronomia e Astrofísica II",
+      "workload": 67
+    },
+    {
+      "name": "Eletrônica Básica",
+      "workload": 67
+    }
+  ],
   "components": [
     [
       {

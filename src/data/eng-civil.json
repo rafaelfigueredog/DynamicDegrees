@@ -1,6 +1,136 @@
 {
   "name": "Bacharelado em Engenharia Civil",
   "semesters": 10,
+  "optatives": [
+    {
+      "name": "Barragens",
+      "workload": 67
+    },
+    {
+      "name": "Projeto de Fundações",
+      "workload": 67
+    },
+    {
+      "name": "Mecânica dos Solos não Saturados",
+      "workload": 67
+    },
+    {
+      "name": "Ensaios de Campo",
+      "workload": 67
+    },
+    {
+      "name": "Geossintéticos",
+      "workload": 67
+    },
+    {
+      "name": "Projeto Estrutural",
+      "workload": 67
+    },
+    {
+      "name": "Alvenaria Estrutural",
+      "workload": 67
+    },
+    {
+      "name": "Recuperação e Reforço Estrutural",
+      "workload": 67
+    },
+    {
+      "name": "Estruturas Pré-Moldadas",
+      "workload": 67
+    },
+    {
+      "name": "Estruturas de Concreto Protendido",
+      "workload": 67
+    },
+    {
+      "name": "Pontes",
+      "workload": 67
+    },
+    {
+      "name": "Construções Sustentáveis",
+      "workload": 67
+    },
+    {
+      "name": "Tratamento e Reuso de Águas Residuárias",
+      "workload": 67
+    },
+    {
+      "name": "Saneamento Ambiental",
+      "workload": 67
+    },
+    {
+      "name": "Conforto Ambiental e Eficiência Energética",
+      "workload": 67
+    },
+    {
+      "name": "Gestão de Resíduos Sólidos",
+      "workload": 67
+    },
+    {
+      "name": "Impactos Ambientais",
+      "workload": 67
+    },
+    {
+      "name": "Mobilidade Urbana",
+      "workload": 67
+    },
+    {
+      "name": "Sistemas Viários Urbanos",
+      "workload": 67
+    },
+    {
+      "name": "Geoprocessamento",
+      "workload": 67
+    },
+    {
+      "name": "Ferrovias",
+      "workload": 33
+    },
+    {
+      "name": "Projeto de Instalações Elétricas",
+      "workload": 67
+    },
+    {
+      "name": "Projeto de Instalações Hidrossanitárias",
+      "workload": 67
+    },
+    {
+      "name": "Projeto de Prevenção e Combate a Incêndio",
+      "workload": 67
+    },
+    {
+      "name": "Instalações Especiais",
+      "workload": 67
+    },
+    {
+      "name": "Modelagem da Informação da Construção III (BIM III)",
+      "workload": 67
+    },
+    {
+      "name": "Projeto Integrador (BIM IV)",
+      "workload": 67
+    },
+    {
+      "name": "Avaliação Pós-Ocupação",
+      "workload": 67
+    },
+    {
+      "name": "Avaliação e Perícia de Imóveis",
+      "workload": 67
+    },
+    {
+      "name": "Libras",
+      "workload": 33
+    },
+    {
+      "name": "Inglês Instrumental",
+      "workload": 33
+    },
+    {
+      "name": "Tópicos Especiais em Engenharia Civil",
+      "workload": 33
+    }
+  ],
   "components": [
     [
       {
@@ -29,7 +159,7 @@
         "prerequisite": []
       },
       {
-        "name": "Algebra Vetorial",
+        "name": "Algebra Vetorial e Geometria Analítica",
         "workload": 67,
         "period": 0,
         "id": 1,
@@ -279,7 +409,7 @@
         "unlock": [
           {
             "period": 3,
-            "id": 3 
+            "id": 3
           }
         ],
         "prerequisite": [

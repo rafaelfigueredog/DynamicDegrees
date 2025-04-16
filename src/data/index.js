@@ -10,6 +10,7 @@ const courses = {
     1: {
         name: computation.name,
         semesters: computation.semesters, 
+        optatives: computation.optatives,
         components: computation.components, 
         workTime: 3309
     },
@@ -26,6 +27,7 @@ const courses = {
     3: {
         name: engcivil.name,
         semesters: engcivil.semesters, 
+        optatives: engcivil.optatives,
         components: engcivil.components, 
         workTime: 3871
     },
@@ -34,6 +36,7 @@ const courses = {
     4: {
         name: math.name,
         semesters: math.semesters, 
+        optatives: math.optatives,
         components: math.components, 
         workTime: 3070
     },
@@ -42,6 +45,7 @@ const courses = {
     5: {
         name: physics.name,
         semesters: physics.semesters, 
+        optatives: physics.optatives,
         components: physics.components,
         workTime: 3117
     },
@@ -49,6 +53,7 @@ const courses = {
     6: {
         name: telematics.name,
         semesters: telematics.semesters, 
+        optatives: telematics.optatives,
         components: telematics.components, 
         workTime: 2839
     },
