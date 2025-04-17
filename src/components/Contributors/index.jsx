@@ -8,7 +8,7 @@ import Link from '@material-ui/core/Link';
 import { FaLinkedin } from 'react-icons/fa';
 import { FaGithub } from 'react-icons/fa';
 
-import authors from './authors.json';
+import contributors from './contributors.json';
 
 const useStyles = makeStyles((theme) => {
     return {
@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => {
             alignItems: 'flex-start',
         },
 
-        authorContainer: {
+        contributorContainer: {
             display: 'flex',
             marginBottom: theme.spacing(4),
             alignItems: 'flex-start',
@@ -51,34 +51,51 @@ const useStyles = makeStyles((theme) => {
         icon: {
             margin: theme.spacing(0.5),
         },
+
+        profile: {
+            display: 'flex', 
+            flexDirection: 'column', 
+            justifyContent: 'center', 
+            alignItems: 'center'
+        },
     };
 });
 
-export default function Authors() {
+export default function Contributors() {
     const classes = useStyles();
 
     const Icons = ({ github, linkedin }) => {
         return (
-            <div className={classes.icons}>
-                <Link alt="Github" target="_blank" href={github}>
+            <div className={classes.icons} >
+                <Link 
+                    alt='Github' 
+                    target='_blank' 
+                    href={github}
+                > 
                     <FaGithub className={classes.icon} size={20} />
                 </Link>
-                <Link alt="Linkedin" target="_blank" href={linkedin}>
+                <Link 
+                    alt='Linkedin' 
+                    target='_blank' 
+                    href={linkedin}
+                > 
                     <FaLinkedin className={classes.icon} size={20} />
                 </Link>
             </div>
         );
     };
 
-    const AuthorProfile = ({ author, github, linkedin, profile }) => {
+    const ContributorProfile = ({ contributor, github, linkedin, profile }) => {
         return (
-            <div className={classes.authorContainer}>
-                <Avatar className={classes.avatar} alt={author} src={profile} />
+            <div className={classes.contributorContainer}>
+                <div className={classes.profile}>
+                    <Avatar className={classes.avatar} alt={contributor} src={profile} />
+                    <Icons github={github} linkedin={linkedin} />
+                </div>
                 <div>
                     <Typography className={classes.paragraph} variant="body2">
-                        {author}
+                        {contributor}
                     </Typography>
-                    <Icons github={github} linkedin={linkedin} />
                 </div>
             </div>
         );
@@ -86,13 +103,13 @@ export default function Authors() {
 
     return (
         <div className={classes.root}>
-            {authors.authors.map((authorData, index) => (
-                <AuthorProfile
+            {contributors.contributors.map((contributorData, index) => (
+                <ContributorProfile
                     key={index}
-                    author={authorData.author}
-                    github={authorData.github}
-                    linkedin={authorData.linkedin}
-                    profile={authorData.profile}
+                    contributor={contributorData.contributor}
+                    github={contributorData.github}
+                    linkedin={contributorData.linkedin}
+                    profile={contributorData.profile}
                 />
             ))}
         </div>
