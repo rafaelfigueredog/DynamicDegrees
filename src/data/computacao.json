@@ -2,6 +2,84 @@
 
     "name": "Bacharelado em Engenharia de Computação", 
     "semesters": 10,
+    "optatives": [
+        {
+            "name": "Desenvolvimento de Sistemas para Web",
+            "workload": 67
+        },
+        {
+            "name": "Teoria da Informação e Codificação",
+            "workload": 67
+        },
+        {
+            "name": "Mineração de Dados",
+            "workload": 67
+        },
+        {
+            "name": "Inteligência de Negócio",
+            "workload": 67
+        },
+        {
+            "name": "Segurança da Informação",
+            "workload": 67
+        },
+        {
+            "name": "Álgebra Vetorial e Geometria Analítica",
+            "workload": 67
+        },
+        {
+            "name": "Cálculo III",
+            "workload": 67
+        },
+        {
+            "name": "Computação Pervasiva",
+            "workload": 67
+        },
+        {
+            "name": "Desenvolvimento para Dispositivos Móveis",
+            "workload": 67
+        },
+        {
+            "name": "Sistemas Multiagente",
+            "workload": 67
+        },
+        {
+            "name": "Compiladores",
+            "workload": 67
+        },
+        {
+            "name": "Internet das Coisas",
+            "workload": 67
+        },
+        {
+            "name": "Processamento Digital de Imagem",
+            "workload": 67
+        },
+        {
+            "name": "Robótica",
+            "workload": 67
+        },
+        {
+            "name": "Inovação Tecnológica",
+            "workload": 67
+        },
+        {
+            "name": "Controle e Automação II",
+            "workload": 67
+        },
+        {
+            "name": "Coprojeto de Hardware e Software",
+            "workload": 67
+        },
+        {
+            "name": "Tópicos Especiais em Engenharia de Computação I",
+            "workload": 67
+        },
+        {
+            "name": "Tópicos Especiais em Engenharia de Computação II",
+            "workload": 67
+        }
+    ],
     "components": [
         [
             {

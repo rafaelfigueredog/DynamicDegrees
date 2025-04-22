@@ -2,6 +2,40 @@
 
     "name": "Curso Superior de Tecnologia em Telemática", 
     "semesters": 7,
+    "optatives": [
+        {
+          "name": "Análise e Projeto de Sistemas ",
+          "workload": 67
+        },
+        {
+          "name": "Computação em Nuvem",
+          "workload": 67
+        },
+        {
+          "name": "Governança de TI ",
+          "workload": 67
+        },
+        {
+          "name": "Microcontroladores e Microprocessadores",
+          "workload": 67
+        },
+        {
+          "name": "Tópicos Especiais em Telemática I ",
+          "workload": 67
+        },
+        {
+          "name": "Tópicos Especiais em Telemática II ",
+          "workload": 67
+        },
+        {
+          "name": "Libras",
+          "workload": 33
+        },
+        {
+          "name": "Banco de Dados",
+          "workload": 67
+        }
+      ],
     "components": [
         [
             {

@@ -8,7 +8,8 @@ import Link from '@material-ui/core/Link'
 import { FaLinkedin } from 'react-icons/fa'; 
 import { FaGithub } from 'react-icons/fa'; 
 
-import data from './data.json'
+import author from './author.json';
+
 import authorProfile from '../../assets/img/author.jpg'
 
 
@@ -26,7 +27,6 @@ const useStyles = makeStyles((theme) => {
             alignItems: 'flex-start', 
         },
 
-        
         heading: {
             marginTop: theme.spacing(3),
             marginButton: theme.spacing(3),
@@ -77,14 +77,14 @@ export default function Authors() {
                 <Link 
                     alt='Github' 
                     target='_blank' 
-                    href={data.github}
+                    href={author.github}
                 > 
                     <FaGithub className={classes.icon} size={20} />
                 </Link>
                 <Link 
                     alt='Linkedin' 
                     target='_blank' 
-                    href={data.linkedin}
+                    href={author.linkedin}
                 > 
                     <FaLinkedin className={classes.icon} size={20} />
                 </Link>
@@ -112,7 +112,7 @@ export default function Authors() {
                 className={classes.paragraph}
                 variant='body2'  
             > 
-                {data.author} 
+                {author.author} 
             </Typography>
         </div>
     )           
