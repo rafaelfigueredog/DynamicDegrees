@@ -24,15 +24,6 @@ function Courses({ paletteType, setPaletteType }) {
     const classes = useStyles();
     const history = useHistory();
 
-    const trackButtonClick = (buttonLabel) => {
-        if (window.gtag) {
-            window.gtag("event", "course_button", {
-                event_category: "Navigation",
-                event_label: buttonLabel,
-            });
-        }
-    };
-
     return (
         <div className={classes.root} >
             <Header paletteType={paletteType} setPaletteType={setPaletteType} />
@@ -50,7 +41,6 @@ function Courses({ paletteType, setPaletteType }) {
                         color="primary"
                         variant="contained"
                         onClick={() => {
-                            trackButtonClick("Construção de Edifícios");
                             history.push("/course/2");
                         }}
                     >
@@ -63,7 +53,6 @@ function Courses({ paletteType, setPaletteType }) {
                         color="primary"
                         variant="contained"
                         onClick={() => {
-                            trackButtonClick("Engenharia de Computação");
                             history.push("/course/1");
                         }}
                     >
@@ -76,7 +65,6 @@ function Courses({ paletteType, setPaletteType }) {
                         color="primary"
                         variant="contained"
                         onClick={() => {
-                            trackButtonClick("Engenharia Civil");
                             history.push("/course/3");
                         }}
                     >
@@ -89,7 +77,6 @@ function Courses({ paletteType, setPaletteType }) {
                         color="primary"
                         variant="contained"
                         onClick={() => {
-                            trackButtonClick("Licenciatura em Matemática");
                             history.push("/course/4");
                         }}
                     >
@@ -102,7 +89,6 @@ function Courses({ paletteType, setPaletteType }) {
                         color="primary"
                         variant="contained"
                         onClick={() => {
-                            trackButtonClick("Licenciatura em Física");
                             history.push("/course/5");
                         }}
                     >
@@ -115,7 +101,6 @@ function Courses({ paletteType, setPaletteType }) {
                         color="primary"
                         variant="contained"
                         onClick={() => {
-                            trackButtonClick("Telemática");
                             history.push("/course/6");
                         }}
                     >
