@@ -10,14 +10,16 @@ import Link from '@material-ui/core/Link'
 import Brightness7Icon from '@material-ui/icons/Brightness7'
 import Brightness4Icon from '@material-ui/icons/Brightness4'
 
-import logoLight from '../../assets/img/ifpb_light.png'
-import logoDark from '../../assets/img/ifpb_dark.png'
+import { ReactComponent as LogoLight } from '../../assets/logo.svg'
+
 
 const useStyles = makeStyles((theme) => {
     return {
         AppBar: {
             display: 'flex',
             backgroundColor: theme.palette.background.default, 
+            paddingTop: 8,
+            paddingBottom: 8,
         },
         img: {
             margin: theme.spacing(2), 
@@ -44,13 +46,13 @@ export default function Header( {paletteType, setPaletteType, title} ) {
     const classes = useStyles(); 
 
     return (
-        <AppBar className={classes.AppBar} elevation={0} >
+        <AppBar className={classes.AppBar} elevation={2} >
             <Toolbar>
-                <img src={paletteType? logoLight : logoDark } className={classes.img} alt='logo'/>
+                <LogoLight />
                 <Typography variant='h6' color='textSecondary' className={classes.date} >
-                    Cursos IFPB <br/>
+                    Matriz Dinâmica <br/>
                     <Typography variant='body2' >
-                        Campina Grande
+                        IFPB Campina Grande
                     </Typography>
                 </Typography>  
                 <Typography 
