@@ -11,5 +11,5 @@
 
 ## 🔒 Licença
 
-**Matriz Dinâmica é um software proprietário de uso comercial. Todos os direitos reservados.**
+**Matriz Dinâmica é um software proprietário. Todos os direitos reservados.**
 > **Matriz Dinâmica** – sua jornada acadêmica simplificada.
