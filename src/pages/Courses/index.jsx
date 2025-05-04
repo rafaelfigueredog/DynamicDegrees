@@ -30,10 +30,6 @@ function Courses({ paletteType, setPaletteType }) {
 
             <ContainerBody>
 
-                <Typography className={classes.title} variant="h5" color='textSecondary'     >
-                    Selecione o curso
-                </Typography>
-
                 <ContainerGrid>
                     <Button
                         startIcon={<BsBuilding />}
